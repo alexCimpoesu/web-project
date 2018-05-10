@@ -1,0 +1,13 @@
+<div *ngIf="concesionario">
+    <h2>{{ concesionario.nombre | uppercase }} Detalles</h2>
+  <div>
+    <label>Nombre:
+      <input [(ngModel)]="concesionario.nombre" placeholder="name"/>
+    </label>
+  </div> 
+  <div><span>Numero: </span>{{ concesionario.numero }}</div>
+  <div><span>Teléfono: </span>{{ concesionario.telefono }}</div>
+  <div><span>Dirección: </span>{{ concesionario.direccion }}</div>
+  <div><span>Provincia: </span>{{ concesionario.provincia }}</div>
+  <div><span>Localidad: </span>{{ concesionario.localidad }}</div>
+</div>

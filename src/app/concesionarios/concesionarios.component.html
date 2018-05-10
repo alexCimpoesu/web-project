@@ -1,0 +1,4 @@
+<div *ngFor="let concesionario of concesionarios" (click)="onSelect(concesionario)" [class.selected]="concesionario == concesionarioSeleccionado"><h2>Concesionario {{ concesionario.nombre | uppercase }}</h2>
+<app-concesionario-detalle *ngIf="concesionarioSeleccionado == concesionario" [concesionario]="concesionarioSeleccionado"></app-concesionario-detalle>
+</div>
+
