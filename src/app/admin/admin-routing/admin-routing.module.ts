@@ -1,3 +1,5 @@
+import { DashboardComponent } from './../../dashboard/dashboard.component';
+import { ConcesionarioDetalleComponent } from './../../concesionario-detalle/concesionario-detalle.component';
 import { AuthGuardService } from './../../auth-guard.service';
 import { AdminDashboardComponent } from './../admin-dashboard/admin-dashboard.component';
 import { ConcesionariosComponent } from './../../concesionarios/concesionarios.component';
@@ -6,9 +8,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 const adminRoutes: Routes = [
   {
-    path: 'admin',
+    path: 'home',
     component: AdminComponent,
     canActivate: [AuthGuardService],
     children: [
@@ -16,7 +19,9 @@ const adminRoutes: Routes = [
         path: '',
         children: [
           { path: 'concesionarios', component: ConcesionariosComponent },
-          { path: '', component: AdminDashboardComponent }
+          { path: '', component: AdminDashboardComponent },
+          { path: 'concesionario/:id', component: ConcesionarioDetalleComponent},
+          { path: 'dashboard', component: DashboardComponent },
         ]
       }
     ]

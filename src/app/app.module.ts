@@ -1,3 +1,4 @@
+import { Http, ConnectionBackend } from '@angular/http';
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { MessageService } from './message.service';
@@ -5,9 +6,6 @@ import { ConcesionarioService } from './concesionario.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ConcesionariosComponent } from './concesionarios/concesionarios.component';
@@ -44,15 +42,13 @@ import { LoginRoutingModule } from './login-routing/login-routing.module';
     AdminRoutingModule,
     HttpClientModule,
     LoginRoutingModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
   ],
   providers: [
     ConcesionarioService,
     MessageService,
     AuthGuardService,
-    AuthService
+    AuthService,
+     Http,
   ],
   bootstrap: [AppComponent]
 })

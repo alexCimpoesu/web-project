@@ -1,6 +1,6 @@
 <div *ngFor="let concesionario of concesionarios" 
     (click)="onSelect(concesionario)" 
     [class.selected]="concesionario === concesionarioSeleccionado">
-    <a routerLink="/concesionario/{{concesionario.id}}"><h2 class="badge">Concesionario {{ concesionario.nombre | uppercase }}</h2></a>
+    <a routerLink="../concesionario/{{concesionario.id}}"><h2 class="badge">Concesionario {{ concesionario.nombre | uppercase }}</h2></a>
 </div>
 

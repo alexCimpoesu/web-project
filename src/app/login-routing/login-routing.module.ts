@@ -1,8 +1,8 @@
 import { LoginComponent } from './../login/login.component';
 import { AuthGuardService } from './../auth-guard.service';
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; 
-import { AuthService }          from '../auth.service';
+import { AuthService } from '../auth.service';
 
 const loginRoutes: Routes = [
   { path: 'login', component: LoginComponent }

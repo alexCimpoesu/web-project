@@ -1,11 +1,13 @@
 <h1>{{ title }}</h1>
 <nav>
-    <a routerLink="/dashboard">Inicio</a>
-    <a routerLink="/concesionarios">Concesionarios</a>
-    <a routerLink="/foro">Foro</a>
-    <a routerLink="/averias">Averias</a>
-    <a routerLink="/datos">Datos</a>
-    <a routerLink="/admin" routerLinkActive="active">Admin</a>
+    
+    <a routerLink="home/dashboard">Inicio</a>
+    <a routerLink="home/concesionarios">Concesionarios</a>
+    <a routerLink="home/foro">Foro</a>
+    <a routerLink="home/averias">Averias</a>
+    <a routerLink="home/datos">Datos</a>
+    <a routerLink="/home" routerLinkActive="active">Admin</a>
+    <a routerLink="/login">Login</a>
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
