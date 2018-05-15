@@ -1,2 +1,11 @@
 <h1>{{ title }}</h1>
-<app-concesionarios></app-concesionarios>
+<nav>
+    <a routerLink="/dashboard">Inicio</a>
+    <a routerLink="/concesionarios">Concesionarios</a>
+    <a routerLink="/foro">Foro</a>
+    <a routerLink="/averias">Averias</a>
+    <a routerLink="/datos">Datos</a>
+    <a routerLink="/admin" routerLinkActive="active">Admin</a>
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages>

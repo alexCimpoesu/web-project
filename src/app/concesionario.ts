@@ -1,5 +1,5 @@
 export class Concesionario {
-    numero: number;
+    id: number;
     nombre: string;
     telefono: number;
     direccion: string;

@@ -1,6 +1,7 @@
-import { CONCESIONARIOS } from './../mock-concesionarios';
+import { ConcesionarioService } from './../concesionario.service';
 import { Concesionario } from './../concesionario';
 import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -9,14 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./concesionarios.component.css']
 })
 export class ConcesionariosComponent implements OnInit {
-  concesionarios = CONCESIONARIOS;
-  concesionarioSeleccionado: Concesionario;
-  constructor() { }
+  concesionarios: Concesionario[];
+
+  constructor(private concesionarioService: ConcesionarioService) { }
 
   ngOnInit() {
+    this.getConcesionarios();
   }
 
-  onSelect(concesionario: Concesionario): void {
-    this.concesionarioSeleccionado = concesionario;
+  getConcesionarios(): void {
+    this.concesionarioService.getConcesionarios()
+        .subscribe(concesionarios => this.concesionarios = concesionarios);
   }
 }
