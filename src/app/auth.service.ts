@@ -21,7 +21,6 @@ export class AuthService {
   private postData;
   private oAuthURL = 'http://proyecto-laravel.io/api/login';
   private accessToken = [];
-  
   constructor(private http: HttpClient) {
     this.headers.append('Content-Type', 'application/json');
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -34,10 +33,9 @@ export class AuthService {
       email: username,
       password: password // the user's password
     };
-    return this.http.post(this.oAuthURL, this.postData, this.headers)
+    return this.http.post(this.oAuthURL, this.postData)
     .map((response => {
         // login successful if there's a jwt token in the response
-        
         if (response) {
           this.setToken(response);
           /*

@@ -1,8 +1,38 @@
-<h2>LOGIN</h2>
-<p>{{message}}</p>
-<p>
-  <span>Usuario</span> <input type="text" [(ngModel)]="usuario">
-  <span>Contraseña</span> <input type="password" [(ngModel)] ="password">
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
+
+
+<div class="container-fluid bg">
+	<br>
+		<div class="cajaRegistro col-sm-6 col-lg-4 my-0 col-lg-offset-4">
+
+      <div  class="login mb-auto">
+
+        <p class="h2 text-center mb-4">Acceder</p>
+        <hr class="barra">
+
+        <!-- Input de Nombre  -->
+        <div class="md-form">
+          <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+          <span>Email</span>
+          <input id="email" class="form-control" placeholder="Login" type="text" [(ngModel)]="usuario">
+        </div>
+
+        <!-- input password -->
+        <div class="md-form">
+          <i class="fa fa-lock fa-lg prefix grey-text"></i>
+          <span>Contraseña</span> <input id="pass" class="form-control" placeholder="Contraseña" type="password" [(ngModel)] ="password">
+
+        </div>
+
+        <!--Boton-->
+        <div class="text-center mt-4">
+          <button (click)="login()"  *ngIf="!authService.isLoggedIn"
+          type="button" class="btn btn-primary">Login</button>
+          <button (click)="logout()" *ngIf="authService.isLoggedIn"
+          type="button" class="btn btn-primary">Logout</button>
+        </div>
+
+      </div>
+<!-- Material form login -->
+
+		</div>
+</div>

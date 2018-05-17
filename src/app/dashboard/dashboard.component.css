@@ -1,0 +1,63 @@
+a:link{
+    text-decoration: none;
+    color:black;
+}
+a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+
+}
+
+body{
+    background-color:#e1e4e5;
+    width: 100%;
+}
+
+.sombra{
+         box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+}
+
+.logo{
+    height: 50px;
+}
+
+.barra{
+    margin-bottom:  100px;
+}
+
+.barraNav{
+    background-color:#7f7b7a;
+    color: red;
+}
+.cuadros{
+    margin-bottom: 20px;
+}
+
+ul.derecha{
+    position: relative;
+    float: right;
+    color: white;
+
+}
+
+ul.derecha li{
+    text-decoration: none;
+}
+
+.menu{
+    margin-left: 150px;
+}
+
+li{
+    margin-left: 15px;
+}
+
+.barratotal{
+
+}
+
+.imagen{
+}
