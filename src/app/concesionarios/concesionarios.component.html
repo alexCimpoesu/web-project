@@ -1,6 +1,20 @@
-<div *ngFor="let concesionario of concesionarios" 
-    (click)="onSelect(concesionario)" 
-    [class.selected]="concesionario === concesionarioSeleccionado">
-    <a routerLink="../concesionario/{{concesionario.id}}"><h2 class="badge">Concesionario {{ concesionario.nombre | uppercase }}</h2></a>
-</div>
 
+<div>
+    <table>
+        <tr>
+            <td>
+                Nombre concesionario
+            </td>
+            <td>
+                Direccion concesionario
+            </td>
+        </tr>
+        <tr *ngFor="let concesionario of concesionarios" 
+        (click)="onSelect(concesionario)" 
+        [class.selected]="concesionario === concesionarioSeleccionado" class="clickable-row" routerLink="../concesionario/{{concesionario.id}}">
+            <td > {{ concesionario.nombre | uppercase }}</td>
+            <td>  {{ concesionario.direccion }} </td>
+        <td><a routerLink="../concesionario/{{concesionario.id}}">Mostrar información</a> </td>
+        </tr>
+    </table>
+</div>

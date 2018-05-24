@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 import { AuthGuardService } from './auth-guard.service';
 
 @Injectable()
-export class TokenInterceptorService {
+export class TokenInterceptorService implements HttpInterceptor {
 
   constructor(
     private router: Router,
@@ -22,7 +22,7 @@ export class TokenInterceptorService {
     private auth: AuthService
   ) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const authRequest = request.clone({headers: request.headers.set('Authorization', `Bearer ${this.auth.token}`)});
+    const authRequest = request.clone({headers: request.headers.set('Authorization', `Bearer ${this.auth.getToken()}`)});
     return next.handle(authRequest).do((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
             // do stuff with response if you want

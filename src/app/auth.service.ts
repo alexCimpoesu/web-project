@@ -27,7 +27,12 @@ export class AuthService {
         this.token = currentUser && currentUser.token;
   }
 
-
+  getToken(): string {
+    if (this.token === null){
+      this.token = localStorage.getItem('token');
+    }
+    return this.token;
+  }
   login(username: string, password: string): Observable<boolean> {
     this.postData = {
       email: username,
