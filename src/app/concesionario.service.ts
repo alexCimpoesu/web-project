@@ -1,25 +1,35 @@
+import { TokenInterceptorService } from './token-interceptor.service';
+import { Headers, RequestOptions } from '@angular/http';
 import { MessageService } from './message.service';
 import { Injectable } from '@angular/core';
 import { Concesionario } from './concesionario';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+
 
 
 @Injectable()
 export class ConcesionarioService {
-  private concesionariosURL = 'api/concesionarios'; // URL de los concesionarios
+  private headers = new HttpHeaders().set('Content-Type', 'application/json');
+ 
+  private concesionariosURL = 'http://proyecto-laravel.io/api/concesionarios'; // URL de los concesionarios
   constructor(
     private messageService: MessageService,
-    private http: HttpClient
-  ) { }
+    private http: HttpClient,
+    private interceptor: TokenInterceptorService
+  ) {
+    this.headers.append('Authorization', 'Bearer ' + localStorage.getItem('token'));
+  }
 
   private log(message: string) {
     this.messageService.add('ConcesionarioService: ' + message);
   }
 
 getConcesionarios(): Observable<Concesionario[]> {
+
+    console.log(this.headers.getAll('Authorization'));
     return this.http.get<Concesionario[]>(this.concesionariosURL)
         .pipe(
           tap(concesionarios => this.log(`concesionarios recogidos`)),
