@@ -62,7 +62,6 @@ export class AuthService {
 }
 setToken(token) {
   token = token['success'];
-  console.log(token['token']);
   localStorage.setItem('token', token['token']);
   this.headers.append('Authorization', 'Bearer ' + token['token'] ); // add the Authentication header
   this.accessToken = token;  // save the access_token

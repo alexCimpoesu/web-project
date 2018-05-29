@@ -59,7 +59,5 @@ import { LoginRoutingModule } from './login-routing/login-routing.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-    constructor(router: Router) {
-    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
-  }
+   
  }

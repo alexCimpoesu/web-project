@@ -23,7 +23,6 @@ export class ConcesionarioService {
   ){
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Authorization', localStorage.getItem('token'));
-    console.log(localStorage.getItem('token'));
   }
 
   private log(message: string) {
