@@ -34,7 +34,7 @@ export class AuthService {
       email: username,
       password: password // the user's password
     };
-    return this.http.post(this.oAuthURL, this.postData, this.headers)
+    return this.http.post(this.oAuthURL, this.postData)
     .map((response => {
         // login successful if there's a jwt token in the response
         
