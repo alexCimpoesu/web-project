@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 const adminRoutes: Routes = [
   {
     path: 'home',
-    component: AdminComponent,
+    component: DashboardComponent,
     canActivate: [AuthGuardService],
     children: [
       {

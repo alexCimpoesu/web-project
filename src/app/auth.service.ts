@@ -21,14 +21,18 @@ export class AuthService {
   private postData;
   private oAuthURL = 'http://proyecto-laravel.io/api/login';
   private accessToken = [];
-  
   constructor(private http: HttpClient) {
     this.headers.append('Content-Type', 'application/json');
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token;
   }
 
-
+  getToken(): string {
+    if (this.token === null){
+      this.token = localStorage.getItem('token');
+    }
+    return this.token;
+  }
   login(username: string, password: string): Observable<boolean> {
     this.postData = {
       email: username,
@@ -37,7 +41,6 @@ export class AuthService {
     return this.http.post(this.oAuthURL, this.postData)
     .map((response => {
         // login successful if there's a jwt token in the response
-        
         if (response) {
           this.setToken(response);
           /*
@@ -59,7 +62,7 @@ export class AuthService {
 }
 setToken(token) {
   token = token['success'];
-  console.log(token['token']);
+  localStorage.setItem('token', token['token']);
   this.headers.append('Authorization', 'Bearer ' + token['token'] ); // add the Authentication header
   this.accessToken = token;  // save the access_token
 }

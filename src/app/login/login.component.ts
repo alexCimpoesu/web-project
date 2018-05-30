@@ -21,14 +21,12 @@ export class LoginComponent {
   }
 
   login() {
-    this.message = 'Trying to log in ...';
+    this.message = 'Cargando';
     this.authService.login(this.usuario, this.password).subscribe(result => {
       if (result === true) {
-          console.log('tamo dentro');
           // login successful
           this.router.navigate(['/home']);
       } else {
-          console.log('no funsiona');
           // login failed
           this.router.navigate(['/login']);
       }

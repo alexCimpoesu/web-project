@@ -1,3 +1,4 @@
+import { Headers, RequestOptions } from '@angular/http';
 import { MessageService } from './message.service';
 import { Injectable } from '@angular/core';
 import { Concesionario } from './concesionario';
@@ -7,13 +8,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
+
 @Injectable()
 export class ConcesionarioService {
-  private concesionariosURL = 'api/concesionarios'; // URL de los concesionarios
+  private headerss = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': localStorage.getItem('token')
+  });
+  private headers = new HttpHeaders();
+  private concesionariosURL = 'http://proyecto-laravel.io/api/concesionarios'; // URL de los concesionarios
   constructor(
     private messageService: MessageService,
-    private http: HttpClient
-  ) { }
+    private http: HttpClient,
+  ){
+    this.headers.append('Content-Type', 'application/json');
+    this.headers.append('Authorization', localStorage.getItem('token'));
+  }
 
   private log(message: string) {
     this.messageService.add('ConcesionarioService: ' + message);
