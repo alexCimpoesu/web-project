@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule, Routes } from '@angular/router';
 import { ConcesionarioDetalleComponent } from './concesionario-detalle/concesionario-detalle.component';
+import { NuevoConcesionarioComponent } from './nuevo-concesionario/nuevo-concesionario.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
@@ -17,15 +18,17 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: 'concesionarios', component: ConcesionariosComponent },
           { path: '', component: AdminDashboardComponent },
-          { path: 'concesionario/:id', component: ConcesionarioDetalleComponent},
           { path: 'dashboard', component: DashboardComponent },
         ]
       }
     ]
   },
- { path: '**', redirectTo: '/login'}
+{ path: 'concesionarios', component: ConcesionariosComponent, canActivate: [AuthGuardService] },
+{ path: 'concesionario/nuevo', component: NuevoConcesionarioComponent, canActivate: [AuthGuardService]},
+{ path: 'concesionario/:id', component: ConcesionarioDetalleComponent, canActivate: [AuthGuardService]},
+
+{ path: '**', redirectTo: '/login'}
 ];
 
 @NgModule({

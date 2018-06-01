@@ -11,6 +11,8 @@ import { Location } from '@angular/common';
 })
 export class ConcesionarioDetalleComponent implements OnInit {
   @Input() concesionario: Concesionario;
+  @Input() esNuevo: boolean;
+  editar: boolean;
   constructor(
     private route: ActivatedRoute,
     private concesionarioService: ConcesionarioService,
@@ -19,6 +21,7 @@ export class ConcesionarioDetalleComponent implements OnInit {
 
   ngOnInit() {
     this.getConcesionario();
+    this.editar = false;
   }
 
   getConcesionario(): void {
@@ -35,4 +38,14 @@ export class ConcesionarioDetalleComponent implements OnInit {
     this.concesionarioService.updateConcesionario(this.concesionario)
         .subscribe(() => this.goBack());
   }
+  delete(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.concesionarioService.deleteConcesionario(id)
+        .subscribe(() => this.goBack());
+  }
+  editarConcesionario(): void {
+    this.editar = true;
+    
+  }
+
 }

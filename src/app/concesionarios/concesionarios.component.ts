@@ -11,15 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConcesionariosComponent implements OnInit {
   concesionarios: Concesionario[];
-
+  num: number;
   constructor(private concesionarioService: ConcesionarioService) { }
 
   ngOnInit() {
     this.getConcesionarios();
-  }
 
+  }
+  getLastId(){
+    this.num = this.concesionarios.length;
+    this.num = this.concesionarios[this.num - 1].id;
+    this.num = this.num + 1;
+  }
   getConcesionarios(): void {
     this.concesionarioService.getConcesionarios()
-        .subscribe(concesionarios => this.concesionarios = concesionarios);
+        .subscribe(concesionarios => this.concesionarios = concesionarios, (error: any) => 'hola', () => this.getLastId());
   }
+
+  
 }

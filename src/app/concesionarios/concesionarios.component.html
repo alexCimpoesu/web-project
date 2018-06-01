@@ -1,20 +1,24 @@
 
-<div>
-    <table>
+<app-barra-nav></app-barra-nav>
+<div class="container-fluid">
+    <table class="container-fluid">
         <tr>
             <td>
-                Nombre concesionario
+                <b>Nombre concesionario</b>
             </td>
             <td>
-                Direccion concesionario
+                <b>Dirección concesionario</b>
+            </td>
+            <td>
+                <button class="btn btn-success" routerLink="../concesionario/nuevo">Añadir concesionario</button> 
             </td>
         </tr>
         <tr *ngFor="let concesionario of concesionarios" 
         (click)="onSelect(concesionario)" 
-        [class.selected]="concesionario === concesionarioSeleccionado" class="clickable-row" routerLink="../concesionario/{{concesionario.id}}">
+        [class.selected]="concesionarioSeleccionado">
             <td > {{ concesionario.nombre | uppercase }}</td>
             <td>  {{ concesionario.direccion }} </td>
-        <td><a routerLink="../concesionario/{{concesionario.id}}">Mostrar información</a> </td>
+        <td><button class="btn btn-secondary btn-sm" routerLink="../concesionario/{{concesionario.id}}">Mostrar información</button> </td>
         </tr>
     </table>
 </div>

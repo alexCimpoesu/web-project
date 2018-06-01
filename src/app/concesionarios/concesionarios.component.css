@@ -45,3 +45,21 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
+
+   /*plantilla*/
+
+   table{
+     border: 1px solid black;
+     text-align: center;
+   }
+   tr{
+    border: 1px solid black;
+   }
+   td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+   }
+   a{
+     text-decoration: none;
+   }

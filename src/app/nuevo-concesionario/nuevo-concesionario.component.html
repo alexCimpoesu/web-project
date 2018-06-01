@@ -1,0 +1,37 @@
+<button (click)="goBack()">Volver</button>
+<div>
+    <h2>{{ concesionario.nombre | uppercase }} Detalles</h2>
+  <div>
+    <label>Nombre:
+      <input [(ngModel)]="concesionario.nombre" placeholder="name"/>
+    </label>
+  </div> 
+  <span>Numero: </span><input [(ngModel)]="concesionario.nombre" placeholder="name"/>
+  <span>telefono: </span><input [(ngModel)]="concesionario.telefono" placeHolder="telefono"/>
+  <span>direccion:</span><input [(ngModel)]="concesionario.direccion" placeHolder="direccion"/>
+  <span>provincia:</span><input [(ngModel)]="concesionario.provincia" placeHolder="provincia"/>
+  <span>localidad:</span><input [(ngModel)]="concesionario.localidad" placeHolder="localidad"/>
+  <span>codigopostal:</span><input [(ngModel)]="concesionario.codigopostal" placeHolder="codigopostal"/>
+  <span>telefonoTaller:</span><input [(ngModel)]="concesionario.telefonoTaller" placeHolder="telefonoTaller"/>
+  <span>responsableTaller:</span><input [(ngModel)]="concesionario.responsableTaller" placeHolder="responsableTaller"/>
+  <span>telefonoResTaller:</span><input [(ngModel)]="concesionario.telefonoResTaller" placeHolder="telefonoResTaller"/>
+  <span>jefePostVenta:</span><input [(ngModel)]="concesionario.jefePostVenta" placeHolder="jefePostVenta"/>
+  <span>telefonoJefePostVenta:</span><input [(ngModel)]="concesionario.telefonoJefePostVenta" placeHolder="telefonoJefePostVenta"/>
+  <span>emailResponsableTaller:</span><input [(ngModel)]="concesionario.emailResponsableTaller" placeHolder="emailResponsableTaller"/>
+  <span>emailJefePostVenta:</span><input [(ngModel)]="concesionario.emailJefePostVenta" placeHolder="emailJefePostVenta"/>
+  <span>emailSsangyongCorp:</span><input [(ngModel)]="concesionario.emailSsangyongCorp" placeHolder="emailSsangyongCorp"/>
+  <span>nombreGerente:</span><input [(ngModel)]="concesionario.nombreGerente" placeHolder="nombreGerente"/>
+  <span>telefonoGerente:</span><input [(ngModel)]="concesionario.telefonoGerente" placeHolder="telefonoGerente"/>
+  <span>emailGerente:</span><input [(ngModel)]="concesionario.emailGerente" placeHolder="emailGerente"/>
+  <span>numDSM:</span><input [(ngModel)]="concesionario.numDSM" placeHolder="numDSM"/>
+  <span>numMSM:</span><input [(ngModel)]="concesionario.numMSM" placeHolder="numMSM"/>
+  <span>clavesSIW:</span><input [(ngModel)]="concesionario.clavesSIW" placeHolder="clavesSIW"/>
+  <span>responsableRecambios:</span><input [(ngModel)]="concesionario.responsableRecambios" placeHolder="responsableRecambios"/>
+  <span>emailRecambios:</span><input [(ngModel)]="concesionario.emailRecambios" placeHolder="emailRecambios"/>
+  <span>emailAttCliente:</span><input [(ngModel)]="concesionario.emailAttCliente" placeHolder="emailAttCliente"/>
+  <span>moGarantias:</span><input [(ngModel)]="concesionario.moGarantias" placeHolder="moGarantias"/>
+  <span>moClient:</span><input [(ngModel)]="concesionario.moClient" placeHolder="moClient"/>
+  <span>otrasMarcas:</span><input [(ngModel)]="concesionario.otrasMarcas" placeHolder="otrasMarcas"/>
+  <button (click)="add()">Guardar concesionario</button>
+</div>
+

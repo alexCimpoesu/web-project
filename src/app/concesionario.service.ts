@@ -20,7 +20,7 @@ export class ConcesionarioService {
   constructor(
     private messageService: MessageService,
     private http: HttpClient,
-  ){
+  ) {
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Authorization', localStorage.getItem('token'));
   }
@@ -57,9 +57,31 @@ updateConcesionario (concesionario: Concesionario): Observable<any> {
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  return this.http.put(this.concesionariosURL, concesionario, httpOptions).pipe(
-    tap(_ => this.log(`updated hero id=${concesionario.id}`)),
-    catchError(this.handleError<any>('updateHero'))
+  const url = `${this.concesionariosURL}/${concesionario.id}`;
+  return this.http.put(url, concesionario, httpOptions).pipe(
+    tap(_ => this.log(`concesionario_actualizado id=${concesionario.id}`)),
+    catchError(this.handleError<any>('updatConcesionario'))
+  );
+}
+deleteConcesionario (id: number): Observable<any> {
+  const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  const url = `${this.concesionariosURL}/${id}`;
+  return this.http.delete(url, httpOptions).pipe(
+    tap(_ => this.log(`concesionario_borrado id=${id}`)),
+    catchError(this.handleError<any>('deleteConcesionario'))
+  );
+}
+addConcesionario (concesionario: Concesionario): Observable<any> {
+  const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  console.log(JSON.stringify({concesionario}));
+ 
+  return this.http.post(this.concesionariosURL, JSON.stringify(concesionario), httpOptions).pipe(
+    tap(_ => this.log(`concesionario_actualizado id=${concesionario.id}`)),
+    catchError(this.handleError<any>('updatConcesionario'))
   );
 }
 }

@@ -21,6 +21,8 @@ import { ManageConcesionariosComponent } from './admin/manage-concesionarios/man
 import { AdminRoutingModule } from './admin/admin-routing/admin-routing.module';
 import { LoginComponent } from './login/login.component';
 import { LoginRoutingModule } from './login-routing/login-routing.module';
+import { NuevoConcesionarioComponent } from './nuevo-concesionario/nuevo-concesionario.component';
+import { BarraNavComponent } from './barra-nav/barra-nav.component';
 
 
 
@@ -34,7 +36,9 @@ import { LoginRoutingModule } from './login-routing/login-routing.module';
     AdminDashboardComponent,
     AdminComponent,
     ManageConcesionariosComponent,
-    LoginComponent
+    LoginComponent,
+    NuevoConcesionarioComponent,
+    BarraNavComponent
   ],
   imports: [
     BrowserModule,
