@@ -1,3 +1,4 @@
+import { FiltroConcesionariosPipe } from './../filtro-concesionarios.pipe';
 import { ConcesionarioService } from './../concesionario.service';
 import { Concesionario } from './../concesionario';
 import { Component, OnInit } from '@angular/core';
@@ -11,12 +12,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConcesionariosComponent implements OnInit {
   concesionarios: Concesionario[];
+  concesionariosGuardados: Concesionario[];
   num: number;
+  inicio: number;
+  fin: number;
+  esFin: boolean;
+  esInicio: boolean;
+  nombreFiltro: string;
+  nombreFiltroAnterior: string;
   constructor(private concesionarioService: ConcesionarioService) { }
 
   ngOnInit() {
     this.getConcesionarios();
-
+    this.inicio = 0;
+    this.fin = 10;
+    this.esFin = false;
+    this.esInicio = true;
+    this.nombreFiltro = '';
   }
   getLastId(){
     this.num = this.concesionarios.length;
@@ -27,6 +39,22 @@ export class ConcesionariosComponent implements OnInit {
     this.concesionarioService.getConcesionarios()
         .subscribe(concesionarios => this.concesionarios = concesionarios, (error: any) => 'hola', () => this.getLastId());
   }
-
-  
-}
+  retrocederDiez(){
+    this.esFin = false;
+    this.inicio -= 10;
+    this.fin -= 10;
+    if (this.inicio === 0){
+        this.esInicio = true;
+    }
+  }
+  avanzarDiez(){
+    this.esInicio = false;
+    this.inicio += 10;
+    this.fin += 10;
+    if (this.fin >= this.concesionarios.length){
+      this.esFin = true;
+    }
+  }
+  borrarFiltro(){
+    this.nombreFiltro = '';
+  }

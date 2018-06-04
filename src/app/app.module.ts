@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginRoutingModule } from './login-routing/login-routing.module';
 import { NuevoConcesionarioComponent } from './nuevo-concesionario/nuevo-concesionario.component';
 import { BarraNavComponent } from './barra-nav/barra-nav.component';
+import { FiltroConcesionariosPipe } from './filtro-concesionarios.pipe';
 
 
 
@@ -38,7 +39,8 @@ import { BarraNavComponent } from './barra-nav/barra-nav.component';
     ManageConcesionariosComponent,
     LoginComponent,
     NuevoConcesionarioComponent,
-    BarraNavComponent
+    BarraNavComponent,
+    FiltroConcesionariosPipe
   ],
   imports: [
     BrowserModule,
