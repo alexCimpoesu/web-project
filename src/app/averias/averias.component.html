@@ -11,20 +11,20 @@
     <table class="container-fluid">
         <tr>
             <td>
-                <b>Nombre concesionario</b>
+                <b>Nombre averia</b>
             </td>
             <td>
-                <b>Dirección concesionario</b>
+                <b>Dirección averia</b>
             </td>
             <td>
-                <button class="btn btn-success" routerLink="../concesionario/nuevo">Añadir concesionario</button> 
+                <button class="btn btn-success" routerLink="../averia/nuevo">Añadir averia</button> 
             </td>
         </tr>
-        <tr *ngFor="let concesionario of concesionarios | filtroConcesionarios: nombreFiltro | slice:inicio:fin" 
-        (click)="onSelect(concesionario)">
-            <td > {{ concesionario.nombre | uppercase }}</td>
-            <td>  {{ concesionario.direccion }} </td>
-        <td><button class="btn btn-secondary btn-sm" routerLink="../concesionario/{{concesionario.id}}">Mostrar información</button> </td>
+        <tr *ngFor="let averia of averias | slice:inicio:fin" 
+        (click)="onSelect(averia)">
+            <td > {{ averia.descripcion | uppercase }}</td>
+            <td>  {{ averia.id }} </td>
+        <td><button class="btn btn-secondary btn-sm" routerLink="../averia/{{averia.id}}">Mostrar información</button> </td>
         </tr>
     </table>
     <div class="row justify-content-center">

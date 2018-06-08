@@ -58,3 +58,4 @@ export class ConcesionariosComponent implements OnInit {
   borrarFiltro(){
     this.nombreFiltro = '';
   }
+}

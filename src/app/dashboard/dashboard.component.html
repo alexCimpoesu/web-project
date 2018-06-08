@@ -1,67 +1,69 @@
-
-
-
 <!-- Navigation -->
 
 <app-barra-nav></app-barra-nav>
-   <div class="container">
+<div class="container">
   <span> {{usuario}}</span>
-   <div class="row">
-  
-     <div class="col-md-6">
-       <a routerLink="home/admin">
-       <div class="card sombra cuadros">
-         <img class="card-img-top img-fluid" src="assets\img\prueba11.jpg" height="150px" alt="Mi Imagen">
-         <div class="card-body">
-           <h4 class="card-title"><b>Administración</b></h4>
-           <p class="card-text">Gestiona la App, perfiles e incidencias</p>
-         </div>
-       </div>
-       </a>
-     </div>
-     <br><br>
-     <div class="col-md-6">
-       <a routerLink="../concesionarios">
-         <div class="card sombra">
-           <img class="card-img-top img-fluid" src="assets\img\prueba10.jpg" height="150px" alt="Mi Imagen">
-           <div class="card-body">
-             <h4 class="card-title"><b>Concesionarios</b></h4>
-             <p class="card-text">Lista de Concesionarios Nacionales</p>
-           </div>
-         </div>
-       </a>
-     </div>
-  
-   </div>
-   <br>
-   <div class="row">
-     <div class="col-md-6">
-       <a routerLink="../foro">
-       <div class="card sombra cuadros">
-         <img class="card-img-top img-fluid" src="assets\img\prueba9.jpg" alt="Mi Imagen">
-         <div class="card-body">
-         <h4 class="card-title"><b>Foro</b></h4>
-         <p class="card-text">Comparte tus dudas</p>
-         </div>
-       </div>
-      </a>
-     </div>
-     <div class="col-md-6">
-       <a routerLink="../averias">
-         <div class="card sombra">
-           <img class="card-img-top img-fluid imagen" src="assets\img\prueba8.jpg" alt="Mi Imagen">
-           <div class="card-body">
-           <h4 class="card-title"><b>Base de datos Averias</b></h4>
-           <p class="card-text">Localiza las averias mas frecuentes</p>
-           </div>
-         </div>
-        </a>
-       </div>
-  
-   </div>
-   </div>
-   <router-outlet></router-outlet>
+  <div class="row">
 
- 
-  
-  
+    <div class="col-md-6">
+      <a routerLink="home/admin">
+        <div class="card sombra cuadros">
+          <img class="card-img-top img-fluid" src="assets\img\prueba11.jpg" height="150px" alt="Mi Imagen">
+          <div class="card-body">
+            <h4 class="card-title">
+              <b>Administración</b>
+            </h4>
+            <p class="card-text">Gestiona la App, perfiles e incidencias</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <br>
+    <br>
+    <div class="col-md-6">
+      <a routerLink="../concesionarios">
+        <div class="card sombra">
+          <img class="card-img-top img-fluid" src="assets\img\prueba10.jpg" height="150px" alt="Mi Imagen">
+          <div class="card-body">
+            <h4 class="card-title">
+              <b>Concesionarios</b>
+            </h4>
+            <p class="card-text">Lista de Concesionarios Nacionales</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <a routerLink="../foro">
+        <div class="card sombra cuadros">
+          <img class="card-img-top img-fluid" src="assets\img\prueba9.jpg" alt="Mi Imagen">
+          <div class="card-body">
+            <h4 class="card-title">
+              <b>Foro</b>
+            </h4>
+            <p class="card-text">Comparte tus dudas</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a routerLink="../averias">
+        <div class="card sombra">
+          <img class="card-img-top img-fluid imagen" src="assets\img\prueba8.jpg" alt="Mi Imagen">
+          <div class="card-body">
+            <h4 class="card-title">
+              <b>Base de datos Averias</b>
+            </h4>
+            <p class="card-text">Localiza las averias mas frecuentes</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,220 @@
+<app-barra-nav></app-barra-nav>
+<button (click)="goBack()">Volver</button>
+<div *ngIf="averia && editar">
+  <h2>{{ averia.nombre | uppercase }} Detalles</h2>
+
+  <div class="container-fluid">
+    <table class="container">
+      <tr>
+        <td class="izq">
+          <b>id</b>
+        </td>
+        <td>{{averia.id}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Nombre</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.nombre">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Descripcion</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.descripcion">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Sistema</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.sistema">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Modelo</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.modelo">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Bastidor</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.bastidor">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>estado</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.estado">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Persona De Contacto</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.personaContacto">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>concesionario</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.concesionario">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>fecha</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.fecha">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>referencia</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.referencia">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>numeroIndicencias</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.numeroIncidencias">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>usuario</b>
+        </td>
+        <td>
+          <input [(ngModel)]="averia.usuario">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button (click)="save()">Guardar cambios</button>
+        </td>
+        <td>
+          <button (click)="delete()">Borrar averia</button>
+        </td>
+      </tr>
+
+
+    </table>
+  </div>
+</div>
+<div *ngIf="averia && !editar" ng-hide="editar">
+  <h2>{{ averia.nombre | uppercase }} Detalles</h2>
+
+  <div class="container-fluid">
+    <table class="container">
+      <tr>
+        <td class="izq">
+          <b>id</b>
+        </td>
+        <td>{{averia.id}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Nombre</b>
+        </td>
+        <td>{{averia.nombre}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Descripcion</b>
+        </td>
+        <td>{{averia.descripcion}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Sistema</b>
+        </td>
+        <td>{{averia.sistema}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Modelo</b>
+        </td>
+        <td>{{averia.modelo}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Bastidor</b>
+        </td>
+        <td>{{averia.bastidor}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Estado</b>
+        </td>
+        <td>{{averia.estado}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Persona Contacto</b>
+        </td>
+        <td>{{averia.personaContacto}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>concesionario</b>
+        </td>
+        <td>{{averia.concesionario}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Fecha</b>
+        </td>
+        <td>{{averia.fecha}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Referencia</b>
+        </td>
+        <td>{{averia.referencia}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Numero Incidencias</b>
+        </td>
+        <td>{{averia.numeroIncidencias}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Usuario</b>
+        </td>
+        <td>{{averia.usuario}}</td>
+      </tr>
+     
+      <tr>
+        <td>
+
+        </td>
+        <td>
+          <button (click)="editarAveria()" ng-style="hidden">Editar averia</button>
+        </td>
+
+      </tr>
+
+
+    </table>
+  </div>
+</div>
