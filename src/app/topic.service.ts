@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Mensaje } from './mensaje';
 
 @Injectable()
 
@@ -74,13 +75,13 @@ export class TopicService {
       catchError(this.handleError<any>('deleteTopic'))
     );
   }
-  addTopic(topic: Topic): Observable<any> {
+  addTopic(topic: Topic, mensaje: Mensaje): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    console.log(JSON.stringify({ topic }));
 
-    return this.http.post(this.TopicsURL, JSON.stringify(topic), httpOptions).pipe(
+    console.log(JSON.stringify({ titulo: topic.titulo, cuerpo: mensaje.cuerpo  }));
+    return this.http.post(this.TopicsURL, JSON.stringify({ titulo: topic.titulo, descripcion: mensaje.cuerpo  }), httpOptions).pipe(
       tap(_ => this.log(`Topic_actualizado id=${topic.id}`)),
       catchError(this.handleError<any>('updatTopic'))
     );

@@ -31,6 +31,7 @@ import { AveriaService } from './averia.service';
 import { TopicsComponent } from './topics/topics.component';
 import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
 import { TopicService } from './topic.service';
+import { NuevoTopicComponent } from './nuevo-topic/nuevo-topic.component';
 
 
 
@@ -52,7 +53,8 @@ import { TopicService } from './topic.service';
     DetalleAveriaComponent,
     NuevaAveriaComponent,
     TopicsComponent,
-    DetalleTopicComponent
+    DetalleTopicComponent,
+    NuevoTopicComponent
   ],
   imports: [
     BrowserModule,

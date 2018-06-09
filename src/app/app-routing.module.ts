@@ -1,3 +1,4 @@
+import { NuevoTopicComponent } from './nuevo-topic/nuevo-topic.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AuthGuardService } from './auth-guard.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,6 +13,7 @@ import { DetalleAveriaComponent } from './detalle-averia/detalle-averia.componen
 import { AveriasComponent } from './averias/averias.component';
 import { TopicsComponent } from './topics/topics.component';
 import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
@@ -35,7 +37,7 @@ const routes: Routes = [
 { path: 'averia/nuevo', component: NuevaAveriaComponent, canActivate: [AuthGuardService]},
 { path: 'averia/:id', component: DetalleAveriaComponent, canActivate: [AuthGuardService]},
 { path: 'topics', component: TopicsComponent, canActivate: [AuthGuardService] },
-{ path: 'topics/nuevo', component: TopicsComponent, canActivate: [AuthGuardService]},
+{ path: 'topic/nuevo', component: NuevoTopicComponent, canActivate: [AuthGuardService]},
 { path: 'topic/:id', component: DetalleTopicComponent, canActivate: [AuthGuardService]},
 { path: '**', redirectTo: '/login'}
 ];

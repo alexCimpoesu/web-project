@@ -1,0 +1,32 @@
+<button (click)="goBack()" class="btn btn-secondary">Volver</button>
+<div>
+
+  <div class="container-fluid">
+    <table class="container">
+      <tr>
+        <td class="izq">
+          <b>Titulo</b>
+        </td>
+        <td>
+          <input [(ngModel)]="topic.titulo" class="form-control">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Telefono</b>
+        </td>
+        <td>
+          <input [(ngModel)]="mensaje.cuerpo" class="form-control">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+
+        </td>
+        <td>
+          <button class="btn btn-success" (click)="add()">Guardar tema</button>
+        </td>
+      </tr>
+    </table>
+  </div>
