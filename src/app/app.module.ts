@@ -24,6 +24,13 @@ import { LoginRoutingModule } from './login-routing/login-routing.module';
 import { NuevoConcesionarioComponent } from './nuevo-concesionario/nuevo-concesionario.component';
 import { BarraNavComponent } from './barra-nav/barra-nav.component';
 import { FiltroConcesionariosPipe } from './filtro-concesionarios.pipe';
+import { AveriasComponent } from './averias/averias.component';
+import { DetalleAveriaComponent } from './detalle-averia/detalle-averia.component';
+import { NuevaAveriaComponent } from './nueva-averia/nueva-averia.component';
+import { AveriaService } from './averia.service';
+import { TopicsComponent } from './topics/topics.component';
+import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
+import { TopicService } from './topic.service';
 
 
 
@@ -40,13 +47,17 @@ import { FiltroConcesionariosPipe } from './filtro-concesionarios.pipe';
     LoginComponent,
     NuevoConcesionarioComponent,
     BarraNavComponent,
-    FiltroConcesionariosPipe
+    FiltroConcesionariosPipe,
+    AveriasComponent,
+    DetalleAveriaComponent,
+    NuevaAveriaComponent,
+    TopicsComponent,
+    DetalleTopicComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AdminRoutingModule,
     HttpClientModule,
     LoginRoutingModule,
   ],
@@ -57,6 +68,8 @@ import { FiltroConcesionariosPipe } from './filtro-concesionarios.pipe';
       multi: true
   },
     ConcesionarioService,
+    AveriaService,
+    TopicService,
     MessageService,
     AuthGuardService,
     AuthService,
@@ -65,5 +78,5 @@ import { FiltroConcesionariosPipe } from './filtro-concesionarios.pipe';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-   
+
  }
