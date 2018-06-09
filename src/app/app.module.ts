@@ -30,6 +30,7 @@ import { NuevaAveriaComponent } from './nueva-averia/nueva-averia.component';
 import { AveriaService } from './averia.service';
 import { TopicsComponent } from './topics/topics.component';
 import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
+import { TopicService } from './topic.service';
 
 
 
@@ -68,6 +69,7 @@ import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
   },
     ConcesionarioService,
     AveriaService,
+    TopicService,
     MessageService,
     AuthGuardService,
     AuthService,
@@ -76,5 +78,5 @@ import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-   
+
  }

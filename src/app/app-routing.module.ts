@@ -8,9 +8,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConcesionarioDetalleComponent } from './concesionario-detalle/concesionario-detalle.component';
 import { NuevoConcesionarioComponent } from './nuevo-concesionario/nuevo-concesionario.component';
 import { NuevaAveriaComponent } from './nueva-averia/nueva-averia.component';
-
 import { DetalleAveriaComponent } from './detalle-averia/detalle-averia.component';
 import { AveriasComponent } from './averias/averias.component';
+import { TopicsComponent } from './topics/topics.component';
+import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
@@ -33,6 +34,9 @@ const routes: Routes = [
 { path: 'averias', component: AveriasComponent, canActivate: [AuthGuardService] },
 { path: 'averia/nuevo', component: NuevaAveriaComponent, canActivate: [AuthGuardService]},
 { path: 'averia/:id', component: DetalleAveriaComponent, canActivate: [AuthGuardService]},
+{ path: 'topics', component: TopicsComponent, canActivate: [AuthGuardService] },
+{ path: 'topics/nuevo', component: TopicsComponent, canActivate: [AuthGuardService]},
+{ path: 'topic/:id', component: DetalleTopicComponent, canActivate: [AuthGuardService]},
 { path: '**', redirectTo: '/login'}
 ];
 

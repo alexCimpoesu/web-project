@@ -1,3 +1,39 @@
-<p>
-  topics works!
-</p>
+<app-barra-nav></app-barra-nav>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="mb-2">
+                <input [(ngModel)]="nombreFiltro">
+                <button (click)="borrarFiltro()">Borrar filtro</button>
+        </div>
+
+    </div>
+    <table class="container-fluid">
+        <tr>
+            <td>
+                <b>Tema</b>
+            </td>
+            <td>
+                <b>ID Tema</b>
+            </td>
+            <td>
+                <button class="btn btn-success" routerLink="../topic/nuevo">Crear Nuevo Tema</button>
+            </td>
+        </tr>
+        <tr *ngFor="let topic of topics | slice:inicio:fin"
+        (click)="onSelect(topic)">
+            <td > {{ topic.titulo | uppercase }}</td>
+            <td>  {{ topic.id }} </td>
+        <td><button class="btn btn-secondary btn-sm" routerLink="../topics/{{topic.id}}">Entrar Tema</button> </td>
+        </tr>
+    </table>
+    <div class="row justify-content-center">
+        <div class="col-auto mt-2">
+            <button *ngIf="!esInicio" (click)=retrocederDiez() class="btn btm-primary btn-arrow-left">Diez anteriores</button>
+        </div>
+        <div class="col-auto mt-2">
+            <button *ngIf="!esFin" (click)=avanzarDiez() class="btn btm-primary btn-arrow-right ">Diez siguientes</button>
+        </div>
+
+
+    </div>
+</div>

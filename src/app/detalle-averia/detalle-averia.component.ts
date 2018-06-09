@@ -13,7 +13,7 @@ export class DetalleAveriaComponent implements OnInit {
 
   @Input() averia: Averia;
   @Input() esNuevo: boolean;
-  
+
   editar: boolean;
   constructor(
     private route: ActivatedRoute,
@@ -47,10 +47,10 @@ export class DetalleAveriaComponent implements OnInit {
   }
   editarAveria(): void {
     this.editar = true;
-    
+
   }
 
 }
 
 
-}
+
