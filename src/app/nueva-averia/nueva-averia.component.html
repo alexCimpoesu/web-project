@@ -1,24 +1,13 @@
 <button (click)="goBack()">Volver</button>
 <div>
-    <h2>{{ averia.nombre | uppercase }} Detalles</h2>
-  <div>
-    <label>Nombre:
-      <input [(ngModel)]="averia.nombre" placeholder="name"/>
-    </label>
-  </div> 
+    <h2>Nueva averia: {{ averia.nombre | uppercase }}</h2>
   <table class="container">
-      <tr>
-        <td class="izq">
-          <b>id</b>
-        </td>
-        <td>{{averia.id}}</td>
-      </tr>
       <tr>
         <td class="izq">
           <b>Nombre</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.nombre">
+          <input [(ngModel)]="averia.nombre" class="form-control">
         </td>
       </tr>
       <tr>
@@ -26,7 +15,7 @@
           <b>Descripcion</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.descripcion">
+          <textarea [(ngModel)]="averia.descripcion" class="form-control"></textarea>
         </td>
       </tr>
       <tr>
@@ -34,7 +23,7 @@
           <b>Sistema</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.sistema">
+          <input [(ngModel)]="averia.sistema"  class="form-control">
         </td>
       </tr>
       <tr>
@@ -42,7 +31,7 @@
           <b>Modelo</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.modelo">
+          <input [(ngModel)]="averia.modelo" class="form-control">
         </td>
       </tr>
       <tr>
@@ -50,15 +39,15 @@
           <b>Bastidor</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.bastidor">
+          <input [(ngModel)]="averia.bastidor" class="form-control">
         </td>
       </tr>
       <tr>
         <td class="izq">
-          <b>estado</b>
+          <b>Estado</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.estado">
+          <input [(ngModel)]="averia.estado" class="form-control">
         </td>
       </tr>
       <tr>
@@ -66,47 +55,23 @@
           <b>Persona De Contacto</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.personaContacto">
+          <input [(ngModel)]="averia.personaContacto" class="form-control">
         </td>
       </tr>
       <tr>
         <td class="izq">
-          <b>concesionario</b>
+          <b>Referencia</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.concesionario">
+          <input [(ngModel)]="averia.referencia" class="form-control">
         </td>
       </tr>
       <tr>
         <td class="izq">
-          <b>fecha</b>
+          <b>Numero Incidencias</b>
         </td>
         <td>
-          <input [(ngModel)]="averia.fecha">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>referencia</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.referencia">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>numeroIndicencias</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.numeroIncidencias">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>usuario</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.usuario">
+          <input [(ngModel)]="averia.numeroIncidencias" class="form-control">
         </td>
       </tr>
       <tr>
