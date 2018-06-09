@@ -1,178 +1,230 @@
 <app-barra-nav></app-barra-nav>
-<button (click)="goBack()">Volver</button>
+<!--<button (click)="goBack()" class=" btn btn-secondary">Volver</button>-->
 <div *ngIf="concesionario && editar">
   <h2>{{ concesionario.nombre | uppercase }} Detalles</h2>
 
   <div class="container-fluid">
-    <table class="container">
+    <table class="container mb-5">
       <tr>
-          <td class="izq">
-            <b>id</b>
-          </td>
-          <td>{{concesionario.id}}</td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>nombre</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.nombre"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>telefono</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.telefono"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>direccion</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.direccion"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>provincia</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.provincia"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>localidad</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.localidad"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>codigopostal</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.codigopostal"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>telefonoTaller</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.telefonoTaller"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>responsableTaller</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.responsableTaller"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>telefonoResTaller</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.telefonoResTaller"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>jefePostVenta</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.jefePostVenta"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>telefonoJefePostVenta</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.telefonoJefePostVenta"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>emailResponsableTaller</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.emailResponsableTaller"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>emailJefePostVenta</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.emailJefePostVenta"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>emailSsangyongCorp</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.emailSsangyongCorp"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>nombreGerente</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.nombreGerente"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>telefonoGerente</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.telefonoGerente"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>emailGerente</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.emailGerente"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>numDSM</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.numDSM"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>numMSM</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.numMSM"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>clavesSIW</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.clavesSIW"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>responsableRecambios</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.responsableRecambios"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>emailRecambios</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.emailRecambios"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>emailAttCliente</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.emailAttCliente"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>moGarantias</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.moGarantias"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>moClient</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.moClient"></td>
-        </tr>
-        <tr>
-          <td class="izq">
-            <b>otrasMarcas</b>
-          </td>
-          <td><input [(ngModel)]="concesionario.otrasMarcas"></td>
-        </tr>
+        <td class="izq">
+          <b>ID</b>
+        </td>
+        <td>{{concesionario.id}}</td>
+      </tr>
       <tr>
-        <td>
-          <button (click)="save()">Guardar cambios</button>
+        <td class="izq">
+          <b>Nombre</b>
         </td>
         <td>
-          <button (click)="delete()">Borrar concesionario</button>
+          <input [(ngModel)]="concesionario.nombre">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Telefono</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.telefono">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Dirección</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.direccion">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Provincia</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.provincia">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Localidad</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.localidad">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Código Postal</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.codigopostal">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Teléfono Taller</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.telefonoTaller">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Responsable Taller</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.responsableTaller">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Teléfono Resposable Taller</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.telefonoResTaller">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Jefe Postventa</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.jefePostVenta">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Télefono Jefe Postventa</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.telefonoJefePostVenta">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Responsable Taller</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.emailResponsableTaller">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Jefe Postventa</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.emailJefePostVenta">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email SsangyongCorp</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.emailSsangyongCorp">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Nombre Gerente</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.nombreGerente">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Teléfono Gerente</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.telefonoGerente">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Gerente</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.emailGerente">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Número DSM</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.numDSM">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Número MSM</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.numMSM">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Claves SIW</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.clavesSIW">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Responsable Recambios</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.responsableRecambios">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Recambios</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.emailRecambios">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Atención Cliente</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.emailAttCliente">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>MO Garantias</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.moGarantias">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>MO Cliente</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.moClient">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Otras Marcas</b>
+        </td>
+        <td>
+          <input [(ngModel)]="concesionario.otrasMarcas">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button (click)="save()" class="btn btn-success">Guardar cambios</button>
+        </td>
+        <td>
+          <button (click)="delete()" class="btn btn-danger">Borrar concesionario</button>
         </td>
       </tr>
 
@@ -184,176 +236,176 @@
   <h2>{{ concesionario.nombre | uppercase }} Detalles</h2>
 
   <div class="container-fluid">
-    <table class="container">
-        <tr>
-            <td class="izq">
-              <b>id</b>
-            </td>
-            <td>{{concesionario.id}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>nombre</b>
-            </td>
-            <td>{{concesionario.nombre}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>telefono</b>
-            </td>
-            <td>{{concesionario.telefono}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>direccion</b>
-            </td>
-            <td>{{concesionario.direccion}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>provincia</b>
-            </td>
-            <td>{{concesionario.provincia}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>localidad</b>
-            </td>
-            <td>{{concesionario.localidad}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>codigopostal</b>
-            </td>
-            <td>{{concesionario.codigopostal}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>telefonoTaller</b>
-            </td>
-            <td>{{concesionario.telefonoTaller}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>responsableTaller</b>
-            </td>
-            <td>{{concesionario.responsableTaller}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>telefonoResTaller</b>
-            </td>
-            <td>{{concesionario.telefonoResTaller}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>jefePostVenta</b>
-            </td>
-            <td>{{concesionario.jefePostVenta}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>telefonoJefePostVenta</b>
-            </td>
-            <td>{{concesionario.telefonoJefePostVenta}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>emailResponsableTaller</b>
-            </td>
-            <td>{{concesionario.emailResponsableTaller}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>emailJefePostVenta</b>
-            </td>
-            <td>{{concesionario.emailJefePostVenta}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>emailSsangyongCorp</b>
-            </td>
-            <td>{{concesionario.emailSsangyongCorp}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>nombreGerente</b>
-            </td>
-            <td>{{concesionario.nombreGerente}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>telefonoGerente</b>
-            </td>
-            <td>{{concesionario.telefonoGerente}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>emailGerente</b>
-            </td>
-            <td>{{concesionario.emailGerente}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>numDSM</b>
-            </td>
-            <td>{{concesionario.numDSM}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>numMSM</b>
-            </td>
-            <td>{{concesionario.numMSM}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>clavesSIW</b>
-            </td>
-            <td>{{concesionario.clavesSIW}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>responsableRecambios</b>
-            </td>
-            <td>{{concesionario.responsableRecambios}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>emailRecambios</b>
-            </td>
-            <td>{{concesionario.emailRecambios}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>emailAttCliente</b>
-            </td>
-            <td>{{concesionario.emailAttCliente}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>moGarantias</b>
-            </td>
-            <td>{{concesionario.moGarantias}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>moClient</b>
-            </td>
-            <td>{{concesionario.moClient}}</td>
-          </tr>
-          <tr>
-            <td class="izq">
-              <b>otrasMarcas</b>
-            </td>
-            <td>{{concesionario.otrasMarcas}}</td>
-          </tr>
+    <table class="container mb-5">
+      <tr>
+        <td class="izq">
+          <b>id</b>
+        </td>
+        <td>{{concesionario.id}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Nombre</b>
+        </td>
+        <td>{{concesionario.nombre}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Teléfono</b>
+        </td>
+        <td>{{concesionario.telefono}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Dirección</b>
+        </td>
+        <td>{{concesionario.direccion}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Provincia</b>
+        </td>
+        <td>{{concesionario.provincia}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Localidad</b>
+        </td>
+        <td>{{concesionario.localidad}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Código Postal</b>
+        </td>
+        <td>{{concesionario.codigopostal}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Teléfono Taller</b>
+        </td>
+        <td>{{concesionario.telefonoTaller}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Responsable Taller</b>
+        </td>
+        <td>{{concesionario.responsableTaller}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Teléfono Responsable Taller</b>
+        </td>
+        <td>{{concesionario.telefonoResTaller}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Jefe PostVenta</b>
+        </td>
+        <td>{{concesionario.jefePostVenta}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Teléfono Jefe PostVenta</b>
+        </td>
+        <td>{{concesionario.telefonoJefePostVenta}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Responsable Taller</b>
+        </td>
+        <td>{{concesionario.emailResponsableTaller}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Jefe PostVenta</b>
+        </td>
+        <td>{{concesionario.emailJefePostVenta}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email SsangyongCorp</b>
+        </td>
+        <td>{{concesionario.emailSsangyongCorp}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Nombre Gerente</b>
+        </td>
+        <td>{{concesionario.nombreGerente}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Teléfono Gerente</b>
+        </td>
+        <td>{{concesionario.telefonoGerente}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Gerente</b>
+        </td>
+        <td>{{concesionario.emailGerente}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Número DSM</b>
+        </td>
+        <td>{{concesionario.numDSM}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>número MSM</b>
+        </td>
+        <td>{{concesionario.numMSM}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Claves SIW</b>
+        </td>
+        <td>{{concesionario.clavesSIW}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Responsable Recambios</b>
+        </td>
+        <td>{{concesionario.responsableRecambios}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email Recambios</b>
+        </td>
+        <td>{{concesionario.emailRecambios}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email AttCliente</b>
+        </td>
+        <td>{{concesionario.emailAttCliente}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Mo Garantias</b>
+        </td>
+        <td>{{concesionario.moGarantias}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Mo Cliente</b>
+        </td>
+        <td>{{concesionario.moClient}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Otras Marcas</b>
+        </td>
+        <td>{{concesionario.otrasMarcas}}</td>
+      </tr>
 
       <tr>
         <td>
 
         </td>
         <td>
-          <button (click)="editarConcesionario()" ng-style="hidden">Editar concesionario</button>
+          <button (click)="editarConcesionario()" class="btn btn-secondary">Editar concesionario</button>
         </td>
 
       </tr>

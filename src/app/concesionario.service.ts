@@ -77,8 +77,6 @@ addConcesionario (concesionario: Concesionario): Observable<any> {
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  console.log(JSON.stringify({concesionario}));
- 
   return this.http.post(this.concesionariosURL, JSON.stringify(concesionario), httpOptions).pipe(
     tap(_ => this.log(`concesionario_actualizado id=${concesionario.id}`)),
     catchError(this.handleError<any>('updatConcesionario'))

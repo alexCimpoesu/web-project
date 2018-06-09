@@ -15,7 +15,6 @@ export class FiltroConcesionariosPipe implements PipeTransform {
     }
 
     nombreConcesionario = nombreConcesionario.toLowerCase();
-
     return items.filter( it => {
       return it.nombre.toLowerCase().includes(nombreConcesionario);
     });

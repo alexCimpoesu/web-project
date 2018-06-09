@@ -56,5 +56,21 @@ export class ConcesionariosComponent implements OnInit {
     }
   }
   borrarFiltro(){
+    this.esFin = false;
+    this.esInicio = true;
+    this.inicio = 0; 
+    this.fin = 10;
     this.nombreFiltro = '';
   }
+  comprobarFiltro(){
+    if (this.nombreFiltro !== '') {
+      this.inicio = 0; 
+      console.log(this.nombreFiltro);
+      this.fin = this.concesionarios.length;
+      console.log(this.fin);
+    }
+    else {
+      this.borrarFiltro();
+    }
+  }
+}

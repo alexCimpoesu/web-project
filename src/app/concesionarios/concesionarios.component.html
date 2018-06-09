@@ -1,40 +1,42 @@
-
-<app-barra-nav></app-barra-nav>
+<app-barra-nav>
+</app-barra-nav>
 <div class="container-fluid">
-    <div class="row justify-content-center"> 
+    <div class="row justify-content-center">
         <div class="mb-2">
-                <input (keyup) [(ngModel)]="nombreFiltro">
-                <button (click)="borrarFiltro()">Borrar filtro</button>
+            <input [(ngModel)]="nombreFiltro" (ngModelChange)="comprobarFiltro()">
+            <button (click)="borrarFiltro()" class="btn btn-secondary">Borrar filtro</button>
         </div>
 
     </div>
-    <table class="container-fluid">
-        <tr>
-            <td>
-                <b>Nombre concesionario</b>
-            </td>
-            <td>
-                <b>Dirección concesionario</b>
-            </td>
-            <td>
-                <button class="btn btn-success" routerLink="../concesionario/nuevo">Añadir concesionario</button> 
-            </td>
-        </tr>
-        <tr *ngFor="let concesionario of concesionarios | filtroConcesionarios: nombreFiltro | slice:inicio:fin" 
-        (click)="onSelect(concesionario)">
-            <td > {{ concesionario.nombre | uppercase }}</td>
-            <td>  {{ concesionario.direccion }} </td>
-        <td><button class="btn btn-secondary btn-sm" routerLink="../concesionario/{{concesionario.id}}">Mostrar información</button> </td>
-        </tr>
-    </table>
-    <div class="row justify-content-center">
-        <div class="col-auto mt-2">
-            <button *ngIf="!esInicio" (click)=retrocederDiez() class="btn btm-primary btn-arrow-left">Diez anteriores</button>
+    <div class="container">
+
+        <table class="container">
+            <tr>
+                <td class="titulo">
+                    <b>Nombre concesionario</b>
+                </td>
+                <td class="titulo">
+                    <b>Dirección concesionario</b>
+                </td>
+                <td class="titulo">
+                    <button class="btn btn-success" routerLink="../concesionario/nuevo">Añadir concesionario</button>
+                </td>
+            </tr>
+            <tr *ngFor="let concesionario of concesionarios | filtroConcesionarios: nombreFiltro | slice:inicio:fin" (click)="onSelect(concesionario)">
+                <td> {{ concesionario.nombre | uppercase }}</td>
+                <td> {{ concesionario.direccion }} </td>
+                <td>
+                    <button class="btn btn-secondary btn-sm" routerLink="../concesionario/{{concesionario.id}}">Mostrar información</button>
+                </td>
+            </tr>
+        </table>
+        <div class="row justify-content-center">
+            <div class="col-auto mt-2">
+                <button *ngIf="!esInicio && nombreFiltro==''" (click)=retrocederDiez() class="btn btn-secondary">Diez anteriores</button>
+            </div>
+            <div class="col-auto mt-2">
+                <button *ngIf="!esFin && nombreFiltro==''" (click)=avanzarDiez() class="btn btn-secondary">Diez siguientes</button>
+            </div>
         </div>
-        <div class="col-auto mt-2">
-            <button *ngIf="!esFin" (click)=avanzarDiez() class="btn btm-primary btn-arrow-right ">Diez siguientes</button>
-        </div>
-      
-        
     </div>
 </div>
