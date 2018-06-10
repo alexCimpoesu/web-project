@@ -1,0 +1,20 @@
+<app-barra-nav></app-barra-nav>
+<div class="container">
+     <div *ngFor='let mensaje of mensajes' class="row">
+       <div class="col-3">
+         {{mensaje.autor}}
+       </div>
+       <div class="col-9">
+         {{mensaje.cuerpo}}
+       </div>
+
+       <button *ngIf="mensaje.autor === usuario" routerLink='../mensajes/{{mensaje.id}}'>Editar</button>
+     </div>   
+     <div>
+       <div>
+         <textarea name="mensajeNuevo" id="" cols="30" rows="10" [(ngModel)]='mensajeNuevo.cuerpo'></textarea>
+         <button (click)=add()>Escribir mensaje</button>
+       </div>
+     </div>
+</div>
+

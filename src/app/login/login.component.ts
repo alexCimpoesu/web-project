@@ -25,6 +25,7 @@ export class LoginComponent {
     this.authService.login(this.usuario, this.password).subscribe(result => {
       if (result === true) {
           // login successful
+          localStorage.setItem('usuario', this.usuario);
           this.router.navigate(['/home']);
       } else {
           // login failed

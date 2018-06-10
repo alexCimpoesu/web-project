@@ -32,6 +32,10 @@ import { TopicsComponent } from './topics/topics.component';
 import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
 import { TopicService } from './topic.service';
 import { NuevoTopicComponent } from './nuevo-topic/nuevo-topic.component';
+import { MensajesComponent } from './mensajes/mensajes.component';
+import { MensajeDetalleComponent } from './mensaje-detalle/mensaje-detalle.component';
+import { NuevoMensajeComponent } from './nuevo-mensaje/nuevo-mensaje.component';
+import { MensajeService } from './mensaje.service';
 
 
 
@@ -54,7 +58,10 @@ import { NuevoTopicComponent } from './nuevo-topic/nuevo-topic.component';
     NuevaAveriaComponent,
     TopicsComponent,
     DetalleTopicComponent,
-    NuevoTopicComponent
+    NuevoTopicComponent,
+    MensajesComponent,
+    MensajeDetalleComponent,
+    NuevoMensajeComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +82,7 @@ import { NuevoTopicComponent } from './nuevo-topic/nuevo-topic.component';
     MessageService,
     AuthGuardService,
     AuthService,
+    MensajeService,
      Http,
   ],
   bootstrap: [AppComponent]
