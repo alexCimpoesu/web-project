@@ -13,7 +13,7 @@
                 <b>Tema</b>
             </td>
             <td>
-                <b>ID Tema</b>
+                <b>Autor</b>
             </td>
             <td>
                 <button class="btn btn-success" routerLink="../topic/nuevo">Crear Nuevo Tema</button>
@@ -22,8 +22,8 @@
         <tr *ngFor="let topic of topics | slice:inicio:fin"
         (click)="onSelect(topic)">
             <td > {{ topic.titulo | uppercase }}</td>
-            <td>  {{ topic.id }} </td>
-        <td><button class="btn btn-secondary btn-sm" routerLink="../topics/{{topic.id}}">Entrar Tema</button> </td>
+            <td>  {{ topic.autor }} </td>
+        <td><button class="btn btn-secondary btn-sm" routerLink="../topics/{{topic.id}}/mensajes">Entrar Tema</button> </td>
         </tr>
     </table>
     <div class="row justify-content-center">

@@ -1,0 +1,14 @@
+<app-barra-nav></app-barra-nav>
+<div class="container">
+  <div *ngIf='mensaje'>
+       <div class="col-3">
+         {{ mensaje.autor }}
+       </div>
+       <div class="col-9">
+         {{ mensaje.cuerpo }}
+       </div>
+       <button (click)='delete()'>Borrar</button>
+       <button (click)='save()'>Guardar</button>
+     </div>
+</div>
+
