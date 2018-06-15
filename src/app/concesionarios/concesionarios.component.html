@@ -35,7 +35,8 @@
                 <button *ngIf="!esInicio && nombreFiltro==''" (click)=retrocederDiez() class="btn btn-secondary">Diez anteriores</button>
             </div>
             <div class="col-auto mt-2">
-                <button *ngIf="!esFin && nombreFiltro==''" (click)=avanzarDiez() class="btn btn-secondary">Diez siguientes</button>
+                <button *ngIf="(!esFin && nombreFiltro=='')" (click)=avanzarDiez() class="btn btn-secondary">Diez siguientes</button>
+
             </div>
         </div>
     </div>

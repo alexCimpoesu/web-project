@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { MensajeService } from './../mensaje.service';
 import { Mensaje } from './../mensaje';
@@ -21,7 +22,8 @@ export class MensajesComponent implements OnInit {
   nombreFiltroAnterior: string;
   usuario: string;
   id: number;
-  constructor(private mensajeService: MensajeService, private route: ActivatedRoute) { }
+  esAdmin: boolean;
+  constructor(private mensajeService: MensajeService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.getMensajes();
@@ -33,6 +35,12 @@ export class MensajesComponent implements OnInit {
     this.usuario = localStorage.getItem('usuario');
     this.id = +this.route.snapshot.paramMap.get('id');
     this.mensajeNuevo = new Mensaje();
+    if (localStorage.getItem('permisos') === '1') {
+      this.esAdmin = true;
+    }
+    else {
+      this.esAdmin = false;
+    }
   }
   getLastId() {
     this.num = this.mensajes.length;
@@ -52,6 +60,9 @@ export class MensajesComponent implements OnInit {
       this.esInicio = true;
     }
   }
+  goBack(): void {
+    this.location.back();
+  }
   avanzarDiez() {
     this.esInicio = false;
     this.inicio += 10;
@@ -68,7 +79,6 @@ export class MensajesComponent implements OnInit {
     this.mensajeService.addMensaje(this.mensajeNuevo, this.id)
       .subscribe(() =>    this.getMensajes());
 
-      );
     this.mensajeNuevo.cuerpo = '';
   }
 }

@@ -19,11 +19,11 @@
                 <button class="btn btn-success" routerLink="../topic/nuevo">Crear Nuevo Tema</button>
             </td>
         </tr>
-        <tr *ngFor="let topic of topics | slice:inicio:fin"
-        (click)="onSelect(topic)">
+        <tr *ngFor="let topic of topics | slice:inicio:fin">
             <td > {{ topic.titulo | uppercase }}</td>
             <td>  {{ topic.autor }} </td>
-        <td><button class="btn btn-secondary btn-sm" routerLink="../topics/{{topic.id}}/mensajes">Entrar Tema</button> </td>
+        <td><button class="btn btn-secondary btn-sm" routerLink="../topics/{{topic.id}}/mensajes">Entrar Tema</button> 
+            <button *ngIf="esAdmin" class="btn btn-secondary btn-sm" (click)="delete(topic.id)">Borrar tema</button> </td>
         </tr>
     </table>
     <div class="row justify-content-center">

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Topic } from './../topic';
 import { TopicService } from './../topic.service';
 import { FiltroConcesionariosPipe } from './../filtro-concesionarios.pipe';
+import { Location } from '@angular/common';
+import { METHODS } from 'http';
 
 @Component({
   selector: 'app-topics',
@@ -19,7 +21,9 @@ export class TopicsComponent implements OnInit {
   esInicio: boolean;
   nombreFiltro: string;
   nombreFiltroAnterior: string;
-  constructor(private topicService: TopicService) { }
+  esAdmin: boolean;
+  constructor(private topicService: TopicService,
+    private location: Location) { }
 
   ngOnInit() {
     this.getTopics();
@@ -28,15 +32,27 @@ export class TopicsComponent implements OnInit {
     this.esFin = false;
     this.esInicio = true;
     this.nombreFiltro = '';
+    if (localStorage.getItem('permisos') === '1') {
+      this.esAdmin = true;
+    }
+    else {
+      this.esAdmin = false;
+    }
   }
   getLastId(){
-    this.num = this.topics.length;
-    this.num = this.topics[this.num - 1].id;
-    this.num = this.num + 1;
+    if (this.topics.length > 0) {
+      this.num = this.topics.length;
+      this.num = this.topics[this.num - 1].id;
+      this.num = this.num + 1;
+    }
   }
   getTopics(): void {
     this.topicService.getTopics()
         .subscribe(topics => this.topics = topics, (error: any) => 'hola', () => this.getLastId());
+  }
+  delete(id): void {
+    this.topicService.deleteTopic(id)
+        .subscribe(() => this.getTopics());
   }
   retrocederDiez(){
     this.esFin = false;

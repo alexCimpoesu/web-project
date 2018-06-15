@@ -61,7 +61,8 @@ export class MensajeService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     const url = `${this.MensajeURL}/${mensaje.id}`;
-    return this.http.put(url, Mensaje, httpOptions).pipe(
+    console.log(url);
+    return this.http.put(url, mensaje, httpOptions).pipe(
       tap(_ => this.log(`Mensaje_actualizado id=${mensaje.id}`)),
       catchError(this.handleError<any>('updatMensaje'))
     );

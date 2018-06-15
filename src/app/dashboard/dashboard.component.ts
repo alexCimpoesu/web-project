@@ -10,12 +10,18 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   @Input() usuario: String;
-
+  esAdmin: boolean;
   constructor(private authService: AuthService, private router: Router) {
 
   }
   ngOnInit() {
     console.log(localStorage.getItem('usuario'));
+    if (localStorage.getItem('permisos') === '1') {
+      this.esAdmin = true;
+    }
+    else {
+      this.esAdmin = false;
+    }
   }
 
   logout() {

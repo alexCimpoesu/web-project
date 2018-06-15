@@ -3,7 +3,7 @@
 <app-barra-nav></app-barra-nav>
 <div class="container">
   <span> {{usuario}}</span>
-  <div class="row">
+  <div class="row" *ngIf="esAdmin">
 
     <div class="col-md-6">
       <a routerLink="home/admin">

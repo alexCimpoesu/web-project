@@ -61,6 +61,7 @@ export class AuthService {
     }));
 }
 setToken(token) {
+  localStorage.setItem('permisos', token['permisos']);
   token = token['success'];
   localStorage.setItem('token', token['token']);
   this.headers.append('Authorization', 'Bearer ' + token['token'] ); // add the Authentication header
@@ -70,7 +71,9 @@ setToken(token) {
     this.isLoggedIn = false;
     // clear token remove user from local storage to log user out
     this.token = null;
+
     localStorage.removeItem('currentUser');
+    localStorage.clear();
 }
 
 }

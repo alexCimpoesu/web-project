@@ -31,9 +31,11 @@ export class ConcesionariosComponent implements OnInit {
     this.nombreFiltro = '';
   }
   getLastId(){
+    if (this.concesionarios.length > 10) {
     this.num = this.concesionarios.length;
     this.num = this.concesionarios[this.num - 1].id;
     this.num = this.num + 1;
+    }
   }
   getConcesionarios(): void {
     this.concesionarioService.getConcesionarios()

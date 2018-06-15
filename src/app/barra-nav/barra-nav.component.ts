@@ -7,17 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./barra-nav.component.css']
 })
 export class BarraNavComponent implements OnInit {
-
+  esAdmin: boolean;
+  ruta: string;
   constructor(
     private auth: AuthService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    if (localStorage.getItem('permisos') === '1') {
+      this.esAdmin = true;
+    }
+    else {
+      this.esAdmin = false;
+    }
   }
 
   logout() {
     this.auth.logout();
     this.router.navigate(['/login']);
+  }
+  cambioEstado(){
+       this.ruta = this.router.url; 
   }
 }

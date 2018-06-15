@@ -13,7 +13,7 @@ export class DetalleAveriaComponent implements OnInit {
 
   @Input() averia: Averia;
   @Input() esNuevo: boolean;
-
+  esAdmin: boolean;
   editar: boolean;
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +24,12 @@ export class DetalleAveriaComponent implements OnInit {
   ngOnInit() {
     this.getAveria();
     this.editar = false;
+    if (localStorage.getItem('permisos') === '1') {
+      this.esAdmin = true;
+    }
+    else {
+      this.esAdmin = false;
+    }
   }
 
   getAveria(): void {

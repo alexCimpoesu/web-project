@@ -204,12 +204,12 @@
         <td>{{averia.usuario}}</td>
       </tr>
      
-      <tr>
+      <tr *ngIf="esAdmin">
         <td>
 
         </td>
         <td>
-          <button (click)="editarAveria()" ng-style="hidden">Editar averia</button>
+          <button (click)="editarAveria()"ng-style="hidden">Editar averia</button>
         </td>
 
       </tr>

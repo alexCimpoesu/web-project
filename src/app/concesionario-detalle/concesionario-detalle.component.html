@@ -4,6 +4,7 @@
   <h2>{{ concesionario.nombre | uppercase }} Detalles</h2>
 
   <div class="container-fluid">
+    <div><button (click)="goBack()">Volver</button></div>
     <table class="container mb-5">
       <tr>
         <td class="izq">
@@ -234,7 +235,7 @@
 </div>
 <div *ngIf="concesionario && !editar" ng-hide="editar">
   <h2>{{ concesionario.nombre | uppercase }} Detalles</h2>
-
+  <div><button (click)="goBack()">Volver</button></div>
   <div class="container-fluid">
     <table class="container mb-5">
       <tr>

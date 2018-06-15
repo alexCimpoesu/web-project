@@ -40,6 +40,7 @@ export class MensajeDetalleComponent implements OnInit {
   }
 
   save(): void {
+    console.log(this.mensaje);
     this.mensajeService.updateMensaje(this.mensaje)
         .subscribe(() => this.goBack());
   }
