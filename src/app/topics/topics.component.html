@@ -9,13 +9,13 @@
     </div>
     <table class="container-fluid">
         <tr>
-            <td>
+            <td class="titulo">
                 <b>Tema</b>
             </td>
-            <td>
+            <td class="titulo">
                 <b>Autor</b>
             </td>
-            <td>
+            <td class="titulo">
                 <button class="btn btn-success" routerLink="../topic/nuevo">Crear Nuevo Tema</button>
             </td>
         </tr>
@@ -23,7 +23,7 @@
             <td > {{ topic.titulo | uppercase }}</td>
             <td>  {{ topic.autor }} </td>
         <td><button class="btn btn-secondary btn-sm" routerLink="../topics/{{topic.id}}/mensajes">Entrar Tema</button> 
-            <button *ngIf="esAdmin" class="btn btn-secondary btn-sm" (click)="delete(topic.id)">Borrar tema</button> </td>
+            <button *ngIf="esAdmin" class="btn btn-danger btn-sm" (click)="delete(topic.id)">Borrar tema</button> </td>
         </tr>
     </table>
     <div class="row justify-content-center">

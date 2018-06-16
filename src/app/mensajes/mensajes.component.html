@@ -11,7 +11,7 @@
        <div class="cuerpo col-8">
          {{mensaje.cuerpo}}
        </div>
-       <br>
+       <br><br>
        <div>
        <button  class="btn btn-secondary btn-sm" *ngIf="mensaje.autor === usuario || esAdmin" routerLink='../mensajes/{{mensaje.id}}'>Editar</button>
       </div>

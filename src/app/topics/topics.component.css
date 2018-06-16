@@ -48,6 +48,11 @@
 
  /*plantilla*/
 
+ .titulo{
+  background-color: #BEC4C8;
+}
+tr:nth-child(even) {background-color: #dfe3e0;}
+
  table{
    border: 1px solid black;
    text-align: center;
