@@ -3,7 +3,6 @@ import { Topic } from './../topic';
 import { TopicService } from './../topic.service';
 import { FiltroConcesionariosPipe } from './../filtro-concesionarios.pipe';
 import { Location } from '@angular/common';
-import { METHODS } from 'http';
 
 @Component({
   selector: 'app-topics',

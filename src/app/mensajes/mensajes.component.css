@@ -1,0 +1,22 @@
+.cuadroMen{
+    margin-bottom: 3%;
+    background-color: lightgrey;
+    
+}
+
+.autor{
+    position: relative;
+    float: left;
+    height: auto;
+    padding: 2%;
+    margin-right: 2%;
+    border: 1px solid black;
+    text-align: center;
+  
+}
+
+.cuerpo{
+    position: relative;
+    float: right; 
+    border: 1px solid black;
+}

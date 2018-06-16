@@ -1,20 +1,25 @@
 <app-barra-nav></app-barra-nav>
 <div class="container">
-      <div><button (click)="goBack()">Volver</button></div>
-     <div *ngFor='let mensaje of mensajes' class="row">
-       <div class="col-3">
-         {{mensaje.autor}}
+      <div><button (click)="goBack()" class="btn btn-secondary">Volver</button></div>
+      <br><br>
+     <div *ngFor='let mensaje of mensajes' class="row cuadroMen rounded">
+       <div class="autor col-3">
+         <b>{{mensaje.autor}}</b>
+         <br>
+         {{mensaje.created_at}}
        </div>
-       <div class="col-9">
+       <div class="cuerpo col-8">
          {{mensaje.cuerpo}}
        </div>
-
-       <button *ngIf="mensaje.autor === usuario || esAdmin" routerLink='../mensajes/{{mensaje.id}}'>Editar</button>
-     </div>   
+       <br>
+       <div>
+       <button  class="btn btn-secondary btn-sm" *ngIf="mensaje.autor === usuario || esAdmin" routerLink='../mensajes/{{mensaje.id}}'>Editar</button>
+      </div>
+      </div>   
      <div>
        <div>
-         <textarea name="mensajeNuevo" id="" cols="30" rows="10" [(ngModel)]='mensajeNuevo.cuerpo'></textarea>
-         <button (click)=add()>Escribir mensaje</button>
+         <textarea name="mensajeNuevo" id="" cols="110" rows="10" [(ngModel)]='mensajeNuevo.cuerpo'></textarea>
+         <button class="btn btn-secondary" (click)=add()>Escribir mensaje</button>
        </div>
      </div>
 </div>

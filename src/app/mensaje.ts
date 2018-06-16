@@ -3,4 +3,5 @@ export class Mensaje {
     idTema: string;
     cuerpo: string;
     id: number;
+    created_at: string;
 }
