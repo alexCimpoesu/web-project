@@ -36,22 +36,13 @@ export class AuthService {
   login(username: string, password: string): Observable<boolean> {
     this.postData = {
       email: username,
-      password: password // the user's password
+      password: password
     };
     return this.http.post(this.oAuthURL, this.postData)
     .map((response => {
         // login successful if there's a jwt token in the response
         if (response) {
           this.setToken(response);
-          /*
-            // set token property
-            this.token = token['token'];
-
-            // store username and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('currentUser', JSON.stringify({email: username, token: token }));
-
-            // return true to indicate successful login
-            */
             this.isLoggedIn = true;
             return true;
         } else {
@@ -61,11 +52,12 @@ export class AuthService {
     }));
 }
 setToken(token) {
+  localStorage.setItem('usuario', token['usuario']);
   localStorage.setItem('permisos', token['permisos']);
   token = token['success'];
   localStorage.setItem('token', token['token']);
-  this.headers.append('Authorization', 'Bearer ' + token['token'] ); // add the Authentication header
-  this.accessToken = token;  // save the access_token
+  this.headers.append('Authorization', 'Bearer ' + token['token'] ); 
+  this.accessToken = token; 
 }
   logout(): void {
     this.isLoggedIn = false;

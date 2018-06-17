@@ -1,0 +1,56 @@
+<button (click)="goBack()" class="btn btn-secondary">Volver</button>
+<div>
+  <h2>{{ usuario.nombre | uppercase }} Detalles</h2>
+  <div class="container-fluid">
+    <table class="container">
+      <tr>
+        <td class="izq">
+          <b>Nombre</b>
+        </td>
+        <td>
+          <input [(ngModel)]="usuario.name" class="form-control">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email</b>
+        </td>
+        <td>
+          <input [(ngModel)]="usuario.email" class="form-control">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Password</b>
+        </td>
+        <td>
+          <input [(ngModel)]="usuario.password" class="form-control" type="password">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Confirmar contraseña</b>
+        </td>
+        <td>
+          <input [(ngModel)]="usuario.c_password" class="form-control" type="password">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Es administrador</b>
+        </td>
+        <td>
+          <input [(ngModel)]="permisos" class="form-control" type="checkbox">
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+
+        </td>
+        <td>
+          <button class="btn btn-success" (click)="add()">Guardar usuario</button>
+        </td>
+      </tr>
+    </table>
+  </div>

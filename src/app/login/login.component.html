@@ -11,15 +11,21 @@
 
         <!-- Input de Nombre  -->
         <div class="md-form">
-          <i class="fa fa-user fa-lg" aria-hidden="true"></i>
-          <span>Email</span>
+          <div class="my-1">
+            <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+            <span>Email</span>
+          </div>
           <input id="email" class="form-control" placeholder="Login" type="text" [(ngModel)]="usuario">
         </div>
 
         <!-- input password -->
         <div class="md-form">
-          <i class="fa fa-lock fa-lg prefix grey-text"></i>
-          <span>Contraseña</span> <input id="pass" class="form-control" placeholder="Contraseña" type="password" [(ngModel)] ="password">
+          <div class="my-1">
+              <i class="fa fa-lock fa-lg prefix grey-text my-1"></i>
+              <span >Contraseña</span> 
+          </div>
+
+          <input id="pass" class="form-control" placeholder="Contraseña" type="password" [(ngModel)] ="password">
 
         </div>
 

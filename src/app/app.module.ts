@@ -36,6 +36,10 @@ import { MensajesComponent } from './mensajes/mensajes.component';
 import { MensajeDetalleComponent } from './mensaje-detalle/mensaje-detalle.component';
 import { NuevoMensajeComponent } from './nuevo-mensaje/nuevo-mensaje.component';
 import { MensajeService } from './mensaje.service';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuariosService } from './usuarios.service';
+import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
+import { UsuarioDetalleComponent } from './usuario-detalle/usuario-detalle.component';
 
 
 
@@ -61,7 +65,10 @@ import { MensajeService } from './mensaje.service';
     NuevoTopicComponent,
     MensajesComponent,
     MensajeDetalleComponent,
-    NuevoMensajeComponent
+    NuevoMensajeComponent,
+    UsuariosComponent,
+    NuevoUsuarioComponent,
+    UsuarioDetalleComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +91,7 @@ import { MensajeService } from './mensaje.service';
     AuthService,
     MensajeService,
      Http,
+     UsuariosService,
   ],
   bootstrap: [AppComponent]
 })

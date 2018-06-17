@@ -1,3 +1,5 @@
+import { UsuarioDetalleComponent } from './usuario-detalle/usuario-detalle.component';
+import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { NuevoTopicComponent } from './nuevo-topic/nuevo-topic.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
@@ -15,6 +17,7 @@ import { AveriasComponent } from './averias/averias.component';
 import { TopicsComponent } from './topics/topics.component';
 import { DetalleTopicComponent } from './detalle-topic/detalle-topic.component';
 import { MensajeDetalleComponent } from './mensaje-detalle/mensaje-detalle.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -42,8 +45,12 @@ const routes: Routes = [
 { path: 'topic/nuevo', component: NuevoTopicComponent, canActivate: [AuthGuardService]},
 { path: 'topics/:id/mensajes/:idMensaje', component: MensajeDetalleComponent, canActivate: [AuthGuardService]},
 { path: 'topics/:id/mensajes', component: MensajesComponent, canActivate: [AuthGuardService]},
-
 { path: 'topic/:id', component: DetalleTopicComponent, canActivate: [AuthGuardService]},
+{ path: 'administracion', component: UsuariosComponent, canActivate: [AuthGuardService] },
+{ path: 'administracion/nuevo', component: NuevoUsuarioComponent, canActivate: [AuthGuardService] },
+{ path: 'administracion/:id', component: UsuarioDetalleComponent, canActivate: [AuthGuardService] },
+
+{ path: '**', redirectTo: '/login'}
 
 ];
 

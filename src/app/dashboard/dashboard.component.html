@@ -1,12 +1,11 @@
 <!-- Navigation -->
 
 <app-barra-nav></app-barra-nav>
-<div class="container">
-  <span> {{usuario}}</span>
+<div class="container cuerpo">
   <div class="row" *ngIf="esAdmin">
 
     <div class="col-md-6">
-      <a routerLink="home/admin">
+      <a routerLink="../administracion">
         <div class="card sombra cuadros">
           <img class="card-img-top img-fluid" src="assets\img\prueba11.jpg" height="150px" alt="Mi Imagen">
           <div class="card-body">

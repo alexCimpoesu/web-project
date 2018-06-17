@@ -1,0 +1,97 @@
+<app-barra-nav></app-barra-nav>
+<!--<button (click)="goBack()" class=" btn btn-secondary">Volver</button>-->
+<div *ngIf="usuario && editar">
+  <h2>{{ usuario.name | uppercase }} Detalles</h2>
+
+  <div class="container-fluid">
+    <div><button (click)="goBack()">Volver</button></div>
+    <table class="container mb-5">
+      <tr>
+        <td class="izq">
+          <b>ID</b>
+        </td>
+        <td>{{usuario.id}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Nombre</b>
+        </td>
+        <td>
+          <input [(ngModel)]="usuario.name">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email</b>
+        </td>
+        <td>
+          <input [(ngModel)]="usuario.email">
+        </td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Es administrador</b>
+        </td>
+        <td>
+          <input type="checkbox"  checked [(ngModel)]='permisos' >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button (click)="save()" class="btn btn-success">Guardar cambios</button>
+        </td>
+        <td>
+          <button (click)="delete()" class="btn btn-danger">Borrar usuario</button>
+        </td>
+      </tr>
+
+
+    </table>
+  </div>
+</div>
+<div *ngIf="usuario && !editar" ng-hide="editar">
+  <h2>{{ usuario.name | uppercase }} Detalles</h2>
+  <div><button (click)="goBack()">Volver</button></div>
+  <div class="container-fluid">
+    <table class="container mb-5">
+      <tr>
+        <td class="izq">
+          <b>id</b>
+        </td>
+        <td>{{usuario.id}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Nombre</b>
+        </td>
+        <td>{{usuario.name}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Email</b>
+        </td>
+        <td>{{usuario.email}}</td>
+      </tr>
+      <tr>
+        <td class="izq">
+          <b>Es administrador</b>
+        </td>
+        <td>
+          <input type="checkbox" *ngIf="usuario.permisos == 1" checked disabled>
+          <input type="checkbox" *ngIf="usuario.permisos == 0" disabled>
+        </td>
+      </tr>
+      <tr>
+        <td>
+
+        </td>
+        <td>
+          <button (click)="editarUsuario()" class="btn btn-secondary">Editar usuario</button>
+        </td>
+
+      </tr>
+
+
+    </table>
+  </div>
+</div>

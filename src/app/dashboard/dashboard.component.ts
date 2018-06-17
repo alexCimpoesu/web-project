@@ -15,7 +15,6 @@ export class DashboardComponent implements OnInit {
 
   }
   ngOnInit() {
-    console.log(localStorage.getItem('usuario'));
     if (localStorage.getItem('permisos') === '1') {
       this.esAdmin = true;
     }

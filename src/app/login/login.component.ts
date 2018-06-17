@@ -31,7 +31,7 @@ export class LoginComponent {
           // login failed
           this.router.navigate(['/login']);
       }
-  });
+  }, () => alert('Usuario o contraseña incorrectos'));
   }
   logout() {
     this.authService.logout();
