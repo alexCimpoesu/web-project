@@ -1,10 +1,15 @@
 <app-barra-nav></app-barra-nav>
-<button (click)="goBack()">Volver</button>
+<button (click)="goBack()" class="btn btn-secondary">Volver</button>
 <div *ngIf="averia && editar">
-  <h2>{{ averia.nombre | uppercase }} Detalles</h2>
+
 
   <div class="container-fluid">
     <table class="container">
+      <tr>
+        <td colspan="2">
+          <h2>{{ averia.nombre | uppercase }} Detalles</h2>
+        </td>
+      </tr>
       <tr>
         <td class="izq">
           <b>id</b>
@@ -109,22 +114,25 @@
       </tr>
       <tr>
         <td>
-          <button (click)="save()">Guardar cambios</button>
+          <button (click)="save()" class="btn btn-success">Guardar cambios</button>
         </td>
         <td>
-          <button (click)="delete()">Borrar averia</button>
+          <button (click)="delete()" class="btn btn-danger">Borrar averia</button>
         </td>
       </tr>
-
-
-    </table>
+     </table>
   </div>
 </div>
 <div *ngIf="averia && !editar" ng-hide="editar">
-  <h2>{{ averia.nombre | uppercase }} Detalles</h2>
+
 
   <div class="container-fluid">
     <table class="container">
+      <tr>
+        <td colspan="2">
+          <h2>{{ averia.nombre | uppercase }} Detalles</h2>
+        </td>
+      </tr>
       <tr>
         <td class="izq">
           <b>id</b>
@@ -203,13 +211,14 @@
         </td>
         <td>{{averia.usuario}}</td>
       </tr>
-     
+
       <tr *ngIf="esAdmin">
+
         <td>
 
         </td>
         <td>
-          <button (click)="editarAveria()"ng-style="hidden">Editar averia</button>
+          <button (click)="editarConcesionario()" class="btn btn-secondary">Editar concesionario</button>
         </td>
 
       </tr>

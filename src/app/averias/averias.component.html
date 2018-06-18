@@ -4,11 +4,11 @@
     <div class="row justify-content-center"> 
         <div class="mb-2">
                 <input [(ngModel)]="nombreFiltro">
-                <button (click)="borrarFiltro()">Borrar filtro</button>
+                <button (click)="borrarFiltro()" class="btn btn-dark">Borrar filtro</button>
         </div>
 
     </div>
-    <table class="container-fluid">
+    <table class="container">
         <tr>
             <td class="titulo">
                 <b>Nombre averia</b>
@@ -20,9 +20,9 @@
                 <button class="btn btn-success" routerLink="../averia/nuevo">Añadir averia</button> 
             </td>
         </tr>
-        <tr *ngFor="let averia of averias | slice:inicio:fin" 
+        <tr *ngFor="let averia of averias | filtroAverias: nombreFiltro | slice:inicio:fin" 
         (click)="onSelect(averia)">
-            <td > {{ averia.descripcion | uppercase }}</td>
+            <td > {{ averia.nombre | uppercase }}</td>
             <td>  {{ averia.id }} </td>
         <td><button class="btn btn-secondary btn-sm" routerLink="../averia/{{averia.id}}">Mostrar información</button> </td>
         </tr>

@@ -40,6 +40,9 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { UsuariosService } from './usuarios.service';
 import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
 import { UsuarioDetalleComponent } from './usuario-detalle/usuario-detalle.component';
+import { FiltroUsuariosPipe } from './filtro-usuarios.pipe';
+import { FiltroAveriasPipe } from './filtro-averias.pipe';
+import { FiltroForoPipe } from './filtro-foro.pipe';
 
 
 
@@ -68,7 +71,10 @@ import { UsuarioDetalleComponent } from './usuario-detalle/usuario-detalle.compo
     NuevoMensajeComponent,
     UsuariosComponent,
     NuevoUsuarioComponent,
-    UsuarioDetalleComponent
+    UsuarioDetalleComponent,
+    FiltroUsuariosPipe,
+    FiltroAveriasPipe,
+    FiltroForoPipe
   ],
   imports: [
     BrowserModule,

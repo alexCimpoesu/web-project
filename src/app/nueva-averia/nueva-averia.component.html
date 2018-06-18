@@ -1,89 +1,94 @@
-<button (click)="goBack()">Volver</button>
+<button (click)="goBack()" class="btn btn-secondary">Volver</button>
 <div>
-    <h2>Nueva averia: {{ averia.nombre | uppercase }}</h2>
+
   <table class="container">
-      <tr>
-        <td class="izq">
-          <b>Nombre</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.nombre" class="form-control">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>Descripcion</b>
-        </td>
-        <td>
-          <textarea [(ngModel)]="averia.descripcion" class="form-control"></textarea>
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>Sistema</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.sistema"  class="form-control">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>Modelo</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.modelo" class="form-control">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>Bastidor</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.bastidor" class="form-control">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>Estado</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.estado" class="form-control">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>Persona De Contacto</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.personaContacto" class="form-control">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>Referencia</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.referencia" class="form-control">
-        </td>
-      </tr>
-      <tr>
-        <td class="izq">
-          <b>Numero Incidencias</b>
-        </td>
-        <td>
-          <input [(ngModel)]="averia.numeroIncidencias" class="form-control">
-        </td>
-      </tr>
-      <tr>
-        <td>
-        
-        </td>
-        <td>
-            <button (click)="add()">Guardar averia</button>
-        </td>
-      </tr>
+    <tr>
+      <td colspan="2">
+        <h2>Nueva averia: {{ averia.nombre | uppercase }}</h2>
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Nombre</b>
+      </td>
+      <td>
+        <input [(ngModel)]="averia.nombre" class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Descripcion</b>
+      </td>
+      <td>
+        <textarea [(ngModel)]="averia.descripcion" class="form-control"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Sistema</b>
+      </td>
+      <td>
+        <input [(ngModel)]="averia.sistema" class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Modelo</b>
+      </td>
+      <td>
+        <input [(ngModel)]="averia.modelo" class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Bastidor</b>
+      </td>
+      <td>
+        <input [(ngModel)]="averia.bastidor" class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Estado</b>
+      </td>
+      <td>
+        <input [(ngModel)]="averia.estado" class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Persona De Contacto</b>
+      </td>
+      <td>
+        <input [(ngModel)]="averia.personaContacto" class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Referencia</b>
+      </td>
+      <td>
+        <input [(ngModel)]="averia.referencia" class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <td class="izq">
+        <b>Numero Incidencias</b>
+      </td>
+      <td>
+        <input [(ngModel)]="averia.numeroIncidencias" class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <td>
+
+      </td>
+      <td>
+        <button class="btn btn-success"  (click)="add()">Guardar averia</button>
+      </td>
+    </tr>
 
 
-    </table>
+  </table>
 
 </div>

@@ -1,7 +1,8 @@
+import { FiltroAveriasPipe } from './../filtro-averias.pipe';
 import { Component, OnInit } from '@angular/core';
 import { Averia } from './../averia';
 import { AveriaService } from './../averia.service';
-import { FiltroConcesionariosPipe } from './../filtro-concesionarios.pipe';
+
 @Component({
   selector: 'app-averias',
   templateUrl: './averias.component.html',
@@ -29,9 +30,11 @@ export class AveriasComponent implements OnInit {
     this.nombreFiltro = '';
   }
   getLastId(){
+    if (this.averias.length > 10) {
     this.num = this.averias.length;
     this.num = this.averias[this.num - 1].id;
     this.num = this.num + 1;
+    }
   }
   getAverias(): void {
     this.averiaService.getAverias()

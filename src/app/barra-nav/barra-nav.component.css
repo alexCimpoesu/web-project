@@ -7,6 +7,9 @@ a {
     text-decoration: none;
 
 }
+li::selection{
+    color: white;
+}
 a.usuario {
 
     color: white;

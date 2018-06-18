@@ -1,3 +1,4 @@
+import { FiltroUsuariosPipe } from './../filtro-usuarios.pipe';
 import { UsuariosService } from './../usuarios.service';
 import { Usuario } from './../usuario';
 import { Component, OnInit } from '@angular/core';
@@ -16,6 +17,7 @@ export class UsuariosComponent implements OnInit {  usuarios: Usuario[];
   esInicio: boolean;
   nombreFiltro: string;
   nombreFiltroAnterior: string;
+  numUsuarios: number;
   constructor(private usuarioService: UsuariosService) { }
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class UsuariosComponent implements OnInit {  usuarios: Usuario[];
     this.esFin = false;
     this.esInicio = true;
     this.nombreFiltro = '';
+    
   }
   getLastId(){
     if (this.usuarios.length > 10) {

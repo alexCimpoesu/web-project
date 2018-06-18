@@ -1,11 +1,16 @@
 <app-barra-nav></app-barra-nav>
 <!--<button (click)="goBack()" class=" btn btn-secondary">Volver</button>-->
 <div *ngIf="usuario && editar">
-  <h2>{{ usuario.name | uppercase }} Detalles</h2>
+
 
   <div class="container-fluid">
-    <div><button (click)="goBack()">Volver</button></div>
+    <div><button (click)="goBack()" class="btn btn-secondary">Volver</button></div>
     <table class="container mb-5">
+      <tr>
+        <td colspan="2">
+            <h2>{{ usuario.name | uppercase }} Detalles</h2>
+        </td>
+      </tr>
       <tr>
         <td class="izq">
           <b>ID</b>
@@ -50,10 +55,14 @@
   </div>
 </div>
 <div *ngIf="usuario && !editar" ng-hide="editar">
-  <h2>{{ usuario.name | uppercase }} Detalles</h2>
-  <div><button (click)="goBack()">Volver</button></div>
+  <div><button (click)="goBack()" class="btn btn-secondary">Volver</button></div>
   <div class="container-fluid">
     <table class="container mb-5">
+        <tr>
+            <td colspan="2">
+                <h2>{{ usuario.name | uppercase }} Detalles</h2>
+            </td>
+          </tr>
       <tr>
         <td class="izq">
           <b>id</b>

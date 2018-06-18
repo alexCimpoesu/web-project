@@ -1,7 +1,8 @@
+import { FiltroForoPipe } from './../filtro-foro.pipe';
 import { Component, OnInit } from '@angular/core';
 import { Topic } from './../topic';
 import { TopicService } from './../topic.service';
-import { FiltroConcesionariosPipe } from './../filtro-concesionarios.pipe';
+
 import { Location } from '@angular/common';
 
 @Component({
@@ -39,7 +40,7 @@ export class TopicsComponent implements OnInit {
     }
   }
   getLastId(){
-    if (this.topics.length > 0) {
+    if (this.topics.length > 10) {
       this.num = this.topics.length;
       this.num = this.topics[this.num - 1].id;
       this.num = this.num + 1;

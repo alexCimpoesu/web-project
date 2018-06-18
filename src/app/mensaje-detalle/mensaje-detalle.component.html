@@ -1,14 +1,16 @@
 <app-barra-nav></app-barra-nav>
 <div class="container">
   <div *ngIf='mensaje'>
-       <div class="col-3">
-         {{ mensaje.autor }}
-       </div>
-       <div class="col-9">
-         <textarea name="" id="" cols="30" rows="10" [(ngModel)]="mensaje.cuerpo"></textarea>
-       </div>
-       <button (click)='delete()'>Borrar</button>
-       <button (click)='save()'>Guardar</button>
-     </div>
-</div>
+    <div class="col-3">
+      {{ mensaje.autor }}
+    </div>
+    <div class="col-9">
+      <textarea name="" id="" cols="30" rows="10" [(ngModel)]="mensaje.cuerpo"></textarea>
+    </div>
+    <div>
+      <button (click)="save()" class="btn btn-success">Guardar cambios</button>
 
+      <button (click)="delete()" class="btn btn-danger">Borrar mensaje</button>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="mb-2">
                 <input [(ngModel)]="nombreFiltro">
-                <button (click)="borrarFiltro()">Borrar filtro</button>
+                <button (click)="borrarFiltro()" class="btn btn-dark">Borrar filtro</button>
         </div>
 
     </div>
@@ -22,7 +22,7 @@
                     <button class="btn btn-success" routerLink="../administracion/nuevo">Añadir usuario</button>
                 </td>
             </tr>
-            <tr *ngFor="let usuario of usuarios | slice:inicio:fin" (click)="onSelect(usuario)">
+            <tr *ngFor="let usuario of usuarios | filtroUsuarios: nombreFiltro | slice:inicio:fin" (click)="onSelect(usuario)">
                 <td> {{ usuario.name | uppercase }}</td>
                 <td> {{ usuario.email }} </td>
                 <td>
@@ -32,7 +32,7 @@
         </table>
         <div class="row justify-content-center">
             <div class="col-auto mt-2">
-                <button *ngIf="!esInicio && nombreFiltro==''" (click)=retrocederDiez() class="btn btn-secondary">Diez anteriores</button>
+                <button *ngIf="(!esInicio && nombreFiltro=='') " (click)=retrocederDiez() class="btn btn-secondary">Diez anteriores</button>
             </div>
             <div class="col-auto mt-2">
                 <button *ngIf="(!esFin && nombreFiltro=='')" (click)=avanzarDiez() class="btn btn-secondary">Diez siguientes</button>

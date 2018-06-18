@@ -24,7 +24,7 @@
             <h5>Concesionarios</h5>
           </a>
         </li>
-        <li class="nav-item" *ngIf="esAdmin" (click)="cambioEstado()" [ngClass]="{'active':ruta === '/administracion'}">
+        <li class="nav-item" *ngIf="esAdmin" (click)="cambioEstado()" [routerLinkActive]="['is-active']">
           <a class="nav-link" routerLink="/administracion">
             <h5>Administración</h5>
           </a>

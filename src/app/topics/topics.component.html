@@ -3,11 +3,11 @@
     <div class="row justify-content-center">
         <div class="mb-2">
                 <input [(ngModel)]="nombreFiltro">
-                <button (click)="borrarFiltro()">Borrar filtro</button>
+                <button (click)="borrarFiltro()" class="btn btn-dark">Borrar filtro</button>
         </div>
 
     </div>
-    <table class="container-fluid">
+    <table class="container">
         <tr>
             <td class="titulo">
                 <b>Tema</b>
@@ -19,7 +19,7 @@
                 <button class="btn btn-success" routerLink="../topic/nuevo">Crear Nuevo Tema</button>
             </td>
         </tr>
-        <tr *ngFor="let topic of topics | slice:inicio:fin">
+        <tr *ngFor="let topic of topics | filtroForo: nombreFiltro | slice:inicio:fin">
             <td > {{ topic.titulo | uppercase }}</td>
             <td>  {{ topic.autor }} </td>
         <td><button class="btn btn-secondary btn-sm" routerLink="../topics/{{topic.id}}/mensajes">Entrar Tema</button> 
@@ -28,10 +28,10 @@
     </table>
     <div class="row justify-content-center">
         <div class="col-auto mt-2">
-            <button *ngIf="!esInicio" (click)=retrocederDiez() class="btn btm-primary btn-arrow-left">Diez anteriores</button>
+            <button *ngIf="!esInicio" (click)=retrocederDiez() class="btn  btn-secondary  btn-arrow-left">Diez anteriores</button>
         </div>
         <div class="col-auto mt-2">
-            <button *ngIf="!esFin" (click)=avanzarDiez() class="btn btm-primary btn-arrow-right ">Diez siguientes</button>
+            <button *ngIf="!esFin" (click)=avanzarDiez() class="btn  btn-secondary  btn-arrow-right ">Diez siguientes</button>
         </div>
 
 
