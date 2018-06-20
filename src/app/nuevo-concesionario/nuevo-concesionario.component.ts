@@ -23,9 +23,9 @@ export class NuevoConcesionarioComponent implements OnInit {
     this.location.back();
   }
   add(): void {
-    
+
     this.concesionarioService.addConcesionario(this.concesionario)
-        .subscribe(() => this.goBack()
+        .subscribe(() => this.goBack(), error => alert('No ha rellenado correctamente alguno de los campos')
 
       );
   }
