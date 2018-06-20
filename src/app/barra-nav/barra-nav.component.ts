@@ -30,6 +30,6 @@ export class BarraNavComponent implements OnInit {
     this.router.navigate(['/login']);
   }
   cambioEstado(){
-       this.ruta = this.router.url; 
+       this.ruta = this.router.url;
   }
 }
