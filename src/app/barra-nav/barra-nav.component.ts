@@ -10,6 +10,8 @@ export class BarraNavComponent implements OnInit {
   esAdmin: boolean;
   ruta: string;
   usuario: string;
+
+
   constructor(
     private auth: AuthService,
     private router: Router
@@ -23,6 +25,7 @@ export class BarraNavComponent implements OnInit {
       this.esAdmin = false;
     }
     this.usuario = localStorage.getItem('usuario');
+
   }
 
   logout() {
@@ -32,4 +35,6 @@ export class BarraNavComponent implements OnInit {
   cambioEstado(){
        this.ruta = this.router.url;
   }
+
+
 }
